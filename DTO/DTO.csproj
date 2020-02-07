@@ -41,22 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="NhanVien_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AppChamCong\AppChamCong.csproj">
-      <Project>{dd3e1841-42c6-409f-80a5-363f932e8999}</Project>
-      <Name>AppChamCong</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BUL\BUL.csproj">
-      <Project>{3bc85b29-8f6c-404a-9000-cadb5c520545}</Project>
-      <Name>BUL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{a3ee206c-2512-4f7e-ba5e-5ea183f04cd2}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
+    <Compile Include="TrinhDo_DTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

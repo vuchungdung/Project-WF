@@ -41,13 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DataProvider.cs" />
+    <Compile Include="NhanVien_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrinhDo_DAL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BUL\BUL.csproj">
-      <Project>{3bc85b29-8f6c-404a-9000-cadb5c520545}</Project>
-      <Name>BUL</Name>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{e18d69f9-0717-4d97-b51f-dbbac77b81fe}</Project>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

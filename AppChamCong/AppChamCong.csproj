@@ -88,5 +88,19 @@
     <Content Include="Resources\icons8_user_40px.png" />
     <Content Include="Resources\icons8_wrench_30px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUL\BUL.csproj">
+      <Project>{3bc85b29-8f6c-404a-9000-cadb5c520545}</Project>
+      <Name>BUL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{a3ee206c-2512-4f7e-ba5e-5ea183f04cd2}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{e18d69f9-0717-4d97-b51f-dbbac77b81fe}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
