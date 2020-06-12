@@ -50,5 +50,26 @@ namespace DAL
                 return null;
             }
         }
+        public static bool QueryData(string query)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(query, ConnectDB());
+                int i = cmd.ExecuteNonQuery();
+                ConnectDB().Close();
+                if (i > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }catch(Exception ex)
+            {
+                ConnectDB().Close();
+                return false;
+            }
+        }
     }
 }

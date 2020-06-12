@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace BUL
 {
-    public class TrinhDo_BUL
+    public class ChucVu_BUL
     {
-        TrinhDo_DAL trinhDo_DAL = new TrinhDo_DAL();
-        public List<TrinhDo_DTO> LoadTrinhDo()
+        ChucVu_DAL chucVu_DAL = new ChucVu_DAL();
+        public List<ChucVu_DTO> LoadChucVu()
         {
-            return trinhDo_DAL.ReadTrinhDo();
+            return chucVu_DAL.ReadChucVu();
         }
     }
 }

@@ -41,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChucVu_BUL.cs" />
     <Compile Include="NhanVien_BUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrinhDo_BUL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
