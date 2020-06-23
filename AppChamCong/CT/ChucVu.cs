@@ -28,5 +28,25 @@ namespace AppChamCong.CT
             dataGridView1.DataSource = typeof(List<ChucVu_DTO>);
             dataGridView1.DataSource = chucVu.LoadChucVu();
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

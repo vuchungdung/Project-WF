@@ -66,13 +66,13 @@ namespace DAL
         }
         public bool DeleteNhanVien(string manv)
         {
-            string query = string.Format("Delete from NhanVien where MaNV ="+manv);
+            string query = string.Format("Delete from NhanVien where MaNV ='"+manv+"'");
             bool result = DataProvider.QueryData(query);
             return result;
         }
         public bool UpdateNhanVien(NhanVien_DTO nv)
         {
-            string query = string.Format("Update NhanVien set MaNV='{0}',HoTen=N'{1}',GioiTinh='{2}',NgaySinh='{3}',DiaChi=N'{4}',SoDienThoai='{5}',MaChucVu='{6}'",nv.MaNhanVien ,nv.HoTen, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SoDienThoai, nv.ChucVu);
+            string query = string.Format("Update NhanVien set HoTen=N'{0}',GioiTinh='{1}',NgaySinh='{2}',DiaChi=N'{3}',SoDienThoai='{4}',MaChucVu='{5}' where MaNV='{6}'",nv.HoTen, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SoDienThoai, nv.ChucVu, nv.MaNhanVien);
             bool result = DataProvider.QueryData(query);
             return result;
         }

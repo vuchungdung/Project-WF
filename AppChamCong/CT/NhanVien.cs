@@ -107,7 +107,23 @@ namespace AppChamCong.CT
 
         private void btnXoa_Click_1(object sender, EventArgs e)
         {
-
+            try
+            {
+                DialogResult R = MessageBox.Show("BẠN CÓ THỰC SỰ MUỐN XÓA", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
+                if (R == DialogResult.Yes)
+                {
+                    if (dataGridViewNV.SelectedRows != null)
+                    {
+                        string manv = dataGridViewNV.SelectedRows[0].Cells[0].Value.ToString();
+                        nhanVien.DeleteNhanVien(manv);
+                        LoadDataNhanVien();
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
         }
 
         private void btnThoat_Click_1(object sender, EventArgs e)
@@ -127,7 +143,23 @@ namespace AppChamCong.CT
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            NhanVien_DTO nv = new NhanVien_DTO();
+            nv.MaNhanVien = txtMaNV.Text;
+            nv.HoTen = txtHoTen.Text;
+            if(cbNam.Checked == true)
+            {
+                nv.GioiTinh = true;
+            }
+            else
+            {
+                nv.GioiTinh = false;
+            }
+            nv.NgaySinh = dtNgaySinh.Value.Date;
+            nv.SoDienThoai = txtSDT.Text;
+            nv.ChucVu = cbChucVu.SelectedValue.ToString();
+            nv.DiaChi = txtDiaChi.Text;
+            nhanVien.UpdateNhanVien(nv);
+            LoadDataNhanVien();
         }
     }
 }

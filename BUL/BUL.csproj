@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChamCong_BUL.cs" />
     <Compile Include="ChucVu_BUL.cs" />
     <Compile Include="NhanVien_BUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

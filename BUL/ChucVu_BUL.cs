@@ -15,5 +15,17 @@ namespace BUL
         {
             return chucVu_DAL.ReadChucVu();
         }
+        public bool ThemChucVu(ChucVu_DTO cv)
+        {
+            return chucVu_DAL.ThemChucVu(cv);
+        }
+        public bool SuaChucVu(ChucVu_DTO cv)
+        {
+            return chucVu_DAL.SuaChucVu(cv);
+        }
+        public bool XoaChucVu(string macv)
+        {
+            return chucVu_DAL.XoaChucVu(macv);
+        }
     }
 }

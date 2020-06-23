@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+    public class ChamCong_DTO_View
+    {
+        public string MaNV { set; get; }
+        public string HoTen { set; get; }
+
+    }
     public class ChamCong_DTO
     {
-        public int MaCong { set; get; }
-        public int Ngay { set; get; }
-        public int Thang { set; get; }
-        public int Nam { set; get; }
-        public int MaNV { set; get; }
+        public DateTime Ngay { get; set; }
+        public string TinhTrang { set; get; }
+        public string MaNV { set; get; }
+
     }
 }
