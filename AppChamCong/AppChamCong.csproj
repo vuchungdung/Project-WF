@@ -46,17 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BangLuongNV.cs">
-      <SubType>Form</SubType>
+    <Compile Include="CT\ChamCong.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BangLuongNV.Designer.cs">
-      <DependentUpon>BangLuongNV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChamCong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChamCong.Designer.cs">
+    <Compile Include="CT\ChamCong.Designer.cs">
       <DependentUpon>ChamCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CT\NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CT\NhanVien.Designer.cs">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CT\ChucVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CT\ChucVu.Designer.cs">
+      <DependentUpon>ChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -66,14 +78,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLDanhMuc.cs">
-      <SubType>Form</SubType>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QLDanhMuc.Designer.cs">
-      <DependentUpon>QLDanhMuc.cs</DependentUpon>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BangLuongNV.resx">
-      <DependentUpon>BangLuongNV.cs</DependentUpon>
+    <EmbeddedResource Include="CT\ChamCong.resx">
+      <DependentUpon>ChamCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CT\ChucVu.resx">
+      <DependentUpon>ChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CT\NhanVien.resx">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -87,8 +108,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QLDanhMuc.resx">
-      <DependentUpon>QLDanhMuc.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -104,6 +125,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\baohiem.jpg" />
+    <Content Include="Resources\chamcong.jpg" />
+    <Content Include="Resources\chucvu.jpg" />
+    <Content Include="Resources\dangxuat.png" />
+    <Content Include="Resources\doimatkhau.jpg" />
+    <Content Include="Resources\doimatkhau.png" />
     <Content Include="Resources\icons8_delete_30px.png" />
     <Content Include="Resources\icons8_delete_bin_30px.png" />
     <Content Include="Resources\icons8_exit_30px.png" />
@@ -111,6 +138,15 @@
     <Content Include="Resources\icons8_save_30px_1.png" />
     <Content Include="Resources\icons8_user_40px.png" />
     <Content Include="Resources\icons8_wrench_30px.png" />
+    <Content Include="Resources\Khenthuong.jpg" />
+    <Content Include="Resources\kht.jpg" />
+    <Content Include="Resources\luong.png" />
+    <Content Include="Resources\nhan vien.png" />
+    <Content Include="Resources\Phongban.png" />
+    <Content Include="Resources\phucap.jpg" />
+    <Content Include="Resources\TaoTaikhoan.png" />
+    <Content Include="Resources\thoat.png" />
+    <Content Include="Resources\thongtin.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BUL\BUL.csproj">

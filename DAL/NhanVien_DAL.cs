@@ -38,7 +38,7 @@ namespace DAL
         {
             string query = "Select * from NhanVien where MaChucVu='"+keyword+"'";
             DataTable dataTable = new DataTable();
-            dataTable = DataProvider.LoadData(query);
+            dataTable = DataProvider.ReadData(query);
             List<NhanVien_DTO> ListNV = new List<NhanVien_DTO>();
             if (dataTable != null && dataTable.Rows.Count > 0)
             {
@@ -60,7 +60,7 @@ namespace DAL
         }
         public bool InsertNhanVien(NhanVien_DTO nv)
         {
-            string query = string.Format("Insert into NhanVien(MaNV,HoTen,GioiTinh,NgaySinh,DiaChi,SoDienThoai,MaChucVu) values(N'{0}','{1}','{2}',N'{3}','{4}','{5}',{6})",nv.MaNhanVien, nv.HoTen, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SoDienThoai, nv.ChucVu);
+            string query = string.Format("Insert into NhanVien(MaNV,HoTen,GioiTinh,NgaySinh,DiaChi,SoDienThoai,MaChucVu) values(N'{0}',N'{1}','{2}','{3}',N'{4}','{5}','{6}')",nv.MaNhanVien, nv.HoTen, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SoDienThoai, nv.ChucVu);
             bool result = DataProvider.QueryData(query);
             return result;
         }
