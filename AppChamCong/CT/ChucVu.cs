@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUL;
+using DTO;
 
 namespace AppChamCong.CT
 {
@@ -15,6 +17,16 @@ namespace AppChamCong.CT
         public ChucVu()
         {
             InitializeComponent();
+        }
+        ChucVu_BUL chucVu = new ChucVu_BUL();
+        private void ChucVu_Load(object sender, EventArgs e)
+        {
+            LoadDataNhanVien();
+        }
+        public void LoadDataNhanVien()
+        {
+            dataGridView1.DataSource = typeof(List<ChucVu_DTO>);
+            dataGridView1.DataSource = chucVu.LoadChucVu();
         }
     }
 }

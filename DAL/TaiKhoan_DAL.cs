@@ -13,8 +13,8 @@ namespace DAL
         {
             DataTable dataTable = new DataTable();
             string query = "Select * from TaiKhoan where TenDangNhap ='"+user+"' and MatKhau = '"+pass+"'";            
-            dataTable = DataProvider.LoadData(query);
-            if (dataTable != null)
+            dataTable = DataProvider.ReadData(query);
+            if (dataTable != null && dataTable.Rows.Count > 0)
             {
                 return true;
             }

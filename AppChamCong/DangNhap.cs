@@ -28,6 +28,11 @@ namespace AppChamCong
                 Form1 f = new Form1();
                 f.Show();
             }
+            else
+            {
+                MessageBox.Show("Đăng nhập thất bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMatKhau.Text = "";
+            }
         }
     }
 }
