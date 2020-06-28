@@ -52,6 +52,18 @@
     <Compile Include="CT\ChamCong.Designer.cs">
       <DependentUpon>ChamCong.cs</DependentUpon>
     </Compile>
+    <Compile Include="CT\DoiMatKhau.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CT\DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CT\DoiThongTin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CT\DoiThongTin.Designer.cs">
+      <DependentUpon>DoiThongTin.cs</DependentUpon>
+    </Compile>
     <Compile Include="CT\NhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,6 +75,24 @@
     </Compile>
     <Compile Include="CT\ChucVu.Designer.cs">
       <DependentUpon>ChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CT\PhongBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CT\PhongBan.Designer.cs">
+      <DependentUpon>PhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CT\TaoTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CT\TaoTaiKhoan.Designer.cs">
+      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CT\TinhLuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CT\TinhLuong.Designer.cs">
+      <DependentUpon>TinhLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
@@ -90,8 +120,23 @@
     <EmbeddedResource Include="CT\ChucVu.resx">
       <DependentUpon>ChucVu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CT\DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CT\DoiThongTin.resx">
+      <DependentUpon>DoiThongTin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CT\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CT\PhongBan.resx">
+      <DependentUpon>PhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CT\TaoTaiKhoan.resx">
+      <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CT\TinhLuong.resx">
+      <DependentUpon>TinhLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>

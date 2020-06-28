@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.brnChamCong = new System.Windows.Forms.Button();
-            this.btnTKNhanVien = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.btnChucVu = new System.Windows.Forms.Button();
@@ -44,6 +39,8 @@
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnPhongBan = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button12 = new System.Windows.Forms.Button();
             this.btnDoiMK = new System.Windows.Forms.Button();
@@ -56,7 +53,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -70,58 +66,10 @@
             this.panel1.Size = new System.Drawing.Size(831, 468);
             this.panel1.TabIndex = 1;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.label20);
-            this.tabPage3.Controls.Add(this.label19);
-            this.tabPage3.Controls.Add(this.btnTKNhanVien);
-            this.tabPage3.Controls.Add(this.brnChamCong);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(823, 98);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Chức năng phụ";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // brnChamCong
-            // 
-            this.brnChamCong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("brnChamCong.BackgroundImage")));
-            this.brnChamCong.Location = new System.Drawing.Point(8, 6);
-            this.brnChamCong.Name = "brnChamCong";
-            this.brnChamCong.Size = new System.Drawing.Size(70, 70);
-            this.brnChamCong.TabIndex = 12;
-            this.brnChamCong.UseVisualStyleBackColor = true;
-            // 
-            // btnTKNhanVien
-            // 
-            this.btnTKNhanVien.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTKNhanVien.BackgroundImage")));
-            this.btnTKNhanVien.Location = new System.Drawing.Point(126, 6);
-            this.btnTKNhanVien.Name = "btnTKNhanVien";
-            this.btnTKNhanVien.Size = new System.Drawing.Size(70, 70);
-            this.btnTKNhanVien.TabIndex = 11;
-            this.btnTKNhanVien.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(2, 79);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(78, 16);
-            this.label19.TabIndex = 10;
-            this.label19.Text = "Chấm Công";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(123, 79);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(70, 16);
-            this.label20.TabIndex = 9;
-            this.label20.Text = "Nhân Viên";
-            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.btnPhongBan);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.btnNhanVien);
@@ -141,16 +89,17 @@
             // button5
             // 
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(362, 6);
+            this.button5.Location = new System.Drawing.Point(482, 6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(70, 70);
             this.button5.TabIndex = 12;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnChucVu
             // 
             this.btnChucVu.Image = ((System.Drawing.Image)(resources.GetObject("btnChucVu.Image")));
-            this.btnChucVu.Location = new System.Drawing.Point(244, 6);
+            this.btnChucVu.Location = new System.Drawing.Point(364, 6);
             this.btnChucVu.Name = "btnChucVu";
             this.btnChucVu.Size = new System.Drawing.Size(70, 70);
             this.btnChucVu.TabIndex = 13;
@@ -160,7 +109,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 78);
+            this.label10.Location = new System.Drawing.Point(125, 78);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 16);
             this.label10.TabIndex = 20;
@@ -169,7 +118,7 @@
             // btnChamCong
             // 
             this.btnChamCong.Image = ((System.Drawing.Image)(resources.GetObject("btnChamCong.Image")));
-            this.btnChamCong.Location = new System.Drawing.Point(126, 5);
+            this.btnChamCong.Location = new System.Drawing.Point(246, 5);
             this.btnChamCong.Name = "btnChamCong";
             this.btnChamCong.Size = new System.Drawing.Size(70, 70);
             this.btnChamCong.TabIndex = 14;
@@ -179,7 +128,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(121, 78);
+            this.label11.Location = new System.Drawing.Point(241, 78);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 16);
             this.label11.TabIndex = 19;
@@ -188,7 +137,7 @@
             // btnNhanVien
             // 
             this.btnNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.Image")));
-            this.btnNhanVien.Location = new System.Drawing.Point(8, 6);
+            this.btnNhanVien.Location = new System.Drawing.Point(128, 6);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Size = new System.Drawing.Size(70, 70);
             this.btnNhanVien.TabIndex = 15;
@@ -198,7 +147,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(248, 78);
+            this.label12.Location = new System.Drawing.Point(368, 78);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 16);
             this.label12.TabIndex = 18;
@@ -207,11 +156,30 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(355, 78);
+            this.label13.Location = new System.Drawing.Point(475, 78);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(80, 16);
             this.label13.TabIndex = 17;
             this.label13.Text = "Bảng Lương";
+            // 
+            // btnPhongBan
+            // 
+            this.btnPhongBan.Image = ((System.Drawing.Image)(resources.GetObject("btnPhongBan.Image")));
+            this.btnPhongBan.Location = new System.Drawing.Point(8, 3);
+            this.btnPhongBan.Name = "btnPhongBan";
+            this.btnPhongBan.Size = new System.Drawing.Size(70, 70);
+            this.btnPhongBan.TabIndex = 21;
+            this.btnPhongBan.UseVisualStyleBackColor = true;
+            this.btnPhongBan.Click += new System.EventHandler(this.btnPhongBan_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 76);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 16);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Phòng Ban";
             // 
             // tabPage1
             // 
@@ -241,6 +209,7 @@
             this.button12.Size = new System.Drawing.Size(70, 70);
             this.button12.TabIndex = 11;
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click_1);
             // 
             // btnDoiMK
             // 
@@ -250,6 +219,7 @@
             this.btnDoiMK.Size = new System.Drawing.Size(70, 70);
             this.btnDoiMK.TabIndex = 10;
             this.btnDoiMK.UseVisualStyleBackColor = true;
+            this.btnDoiMK.Click += new System.EventHandler(this.btnDoiMK_Click_1);
             // 
             // btnThongTinCN
             // 
@@ -259,6 +229,7 @@
             this.btnThongTinCN.Size = new System.Drawing.Size(70, 70);
             this.btnThongTinCN.TabIndex = 9;
             this.btnThongTinCN.UseVisualStyleBackColor = true;
+            this.btnThongTinCN.Click += new System.EventHandler(this.btnThongTinCN_Click_1);
             // 
             // btnTaoTK
             // 
@@ -268,6 +239,7 @@
             this.btnTaoTK.Size = new System.Drawing.Size(70, 70);
             this.btnTaoTK.TabIndex = 8;
             this.btnTaoTK.UseVisualStyleBackColor = true;
+            this.btnTaoTK.Click += new System.EventHandler(this.btnTaoTK_Click_1);
             // 
             // btnDangXuat
             // 
@@ -327,7 +299,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -347,8 +318,6 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
             this.Text = "Form1";
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -360,12 +329,9 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button btnTKNhanVien;
-        private System.Windows.Forms.Button brnChamCong;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnPhongBan;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnNhanVien;

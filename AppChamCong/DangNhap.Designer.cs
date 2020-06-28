@@ -35,7 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDangNhap = new System.Windows.Forms.Button();
-            this.btnKetNoi = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -110,7 +109,7 @@
             // 
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.Teal;
-            this.btnDangNhap.Location = new System.Drawing.Point(37, 191);
+            this.btnDangNhap.Location = new System.Drawing.Point(105, 191);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(112, 30);
             this.btnDangNhap.TabIndex = 12;
@@ -118,25 +117,14 @@
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
-            // btnKetNoi
-            // 
-            this.btnKetNoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKetNoi.ForeColor = System.Drawing.Color.Teal;
-            this.btnKetNoi.Location = new System.Drawing.Point(291, 191);
-            this.btnKetNoi.Name = "btnKetNoi";
-            this.btnKetNoi.Size = new System.Drawing.Size(106, 30);
-            this.btnKetNoi.TabIndex = 14;
-            this.btnKetNoi.Text = "Kết Nối";
-            this.btnKetNoi.UseVisualStyleBackColor = true;
-            // 
             // btnThoat
             // 
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.Teal;
-            this.btnThoat.Location = new System.Drawing.Point(171, 191);
+            this.btnThoat.Location = new System.Drawing.Point(223, 191);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(97, 30);
+            this.btnThoat.Size = new System.Drawing.Size(112, 30);
             this.btnThoat.TabIndex = 13;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -153,7 +141,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDangNhap);
-            this.Controls.Add(this.btnKetNoi);
             this.Controls.Add(this.btnThoat);
             this.Name = "DangNhap";
             this.Text = "DangNhap";
@@ -171,7 +158,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.Button btnKetNoi;
         private System.Windows.Forms.Button btnThoat;
     }
 }
