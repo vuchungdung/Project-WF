@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbTinhTrang = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbTen = new System.Windows.Forms.Label();
@@ -44,7 +44,6 @@
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             this.cbCC = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +52,7 @@
             this.lbTinhTrang.AutoSize = true;
             this.lbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTinhTrang.ForeColor = System.Drawing.Color.White;
-            this.lbTinhTrang.Location = new System.Drawing.Point(515, 31);
+            this.lbTinhTrang.Location = new System.Drawing.Point(483, 31);
             this.lbTinhTrang.Name = "lbTinhTrang";
             this.lbTinhTrang.Size = new System.Drawing.Size(51, 16);
             this.lbTinhTrang.TabIndex = 7;
@@ -63,7 +62,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(444, 33);
+            this.label7.Location = new System.Drawing.Point(412, 33);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 8;
@@ -74,7 +73,7 @@
             this.lbTen.AutoSize = true;
             this.lbTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTen.ForeColor = System.Drawing.Color.White;
-            this.lbTen.Location = new System.Drawing.Point(298, 31);
+            this.lbTen.Location = new System.Drawing.Point(269, 31);
             this.lbTen.Name = "lbTen";
             this.lbTen.Size = new System.Drawing.Size(51, 16);
             this.lbTen.TabIndex = 9;
@@ -84,7 +83,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(210, 33);
+            this.label5.Location = new System.Drawing.Point(181, 33);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 10;
@@ -114,9 +113,9 @@
             // btCapNhat
             // 
             this.btCapNhat.ForeColor = System.Drawing.Color.Black;
-            this.btCapNhat.Location = new System.Drawing.Point(703, 20);
+            this.btCapNhat.Location = new System.Drawing.Point(671, 31);
             this.btCapNhat.Name = "btCapNhat";
-            this.btCapNhat.Size = new System.Drawing.Size(108, 39);
+            this.btCapNhat.Size = new System.Drawing.Size(131, 28);
             this.btCapNhat.TabIndex = 6;
             this.btCapNhat.Text = "Cập Nhật";
             this.btCapNhat.UseVisualStyleBackColor = true;
@@ -125,22 +124,22 @@
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNV,
             this.HoTen,
             this.TinhTrang});
-            this.dataGridView2.Location = new System.Drawing.Point(19, 65);
+            this.dataGridView2.Location = new System.Drawing.Point(30, 65);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(799, 303);
+            this.dataGridView2.Size = new System.Drawing.Size(772, 303);
             this.dataGridView2.TabIndex = 13;
             // 
             // MaNV
@@ -208,21 +207,11 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Chọn ngày";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(581, 427);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 18;
-            // 
             // ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.dtpNgay);
             this.Controls.Add(this.cbCC);
@@ -261,6 +250,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewComboBoxColumn TinhTrang;
-        private System.Windows.Forms.Label label1;
     }
 }

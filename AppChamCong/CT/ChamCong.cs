@@ -28,8 +28,6 @@ namespace AppChamCong.CT
             {
                 if (dataGridView2.Rows[i].Cells["TinhTrang"].Value == null)
                 {
-                    label1.ForeColor = Color.Red;
-                    label1.Text = "Lỗi!! \n Vui lòng kiểm tra lại";
                     dataGridView2.Rows[i].Cells["TinhTrang"].Selected = true;
                     d = 0;
                 }

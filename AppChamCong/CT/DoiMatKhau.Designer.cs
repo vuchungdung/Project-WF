@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbTb = new System.Windows.Forms.Label();
-            this.lbNL = new System.Windows.Forms.Label();
-            this.lbMKM = new System.Windows.Forms.Label();
-            this.lbMKC = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,10 +45,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel1.Controls.Add(this.lbTb);
-            this.panel1.Controls.Add(this.lbNL);
-            this.panel1.Controls.Add(this.lbMKM);
-            this.panel1.Controls.Add(this.lbMKC);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label6);
@@ -67,50 +59,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 300);
             this.panel1.TabIndex = 1;
-            // 
-            // lbTb
-            // 
-            this.lbTb.AutoSize = true;
-            this.lbTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTb.ForeColor = System.Drawing.Color.Red;
-            this.lbTb.Location = new System.Drawing.Point(3, 285);
-            this.lbTb.Name = "lbTb";
-            this.lbTb.Size = new System.Drawing.Size(47, 15);
-            this.lbTb.TabIndex = 6;
-            this.lbTb.Text = "label5";
-            // 
-            // lbNL
-            // 
-            this.lbNL.AutoSize = true;
-            this.lbNL.BackColor = System.Drawing.Color.Red;
-            this.lbNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNL.Location = new System.Drawing.Point(172, 230);
-            this.lbNL.Name = "lbNL";
-            this.lbNL.Size = new System.Drawing.Size(41, 15);
-            this.lbNL.TabIndex = 5;
-            this.lbNL.Text = "label5";
-            // 
-            // lbMKM
-            // 
-            this.lbMKM.AutoSize = true;
-            this.lbMKM.BackColor = System.Drawing.Color.Red;
-            this.lbMKM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMKM.Location = new System.Drawing.Point(172, 187);
-            this.lbMKM.Name = "lbMKM";
-            this.lbMKM.Size = new System.Drawing.Size(41, 15);
-            this.lbMKM.TabIndex = 5;
-            this.lbMKM.Text = "label5";
-            // 
-            // lbMKC
-            // 
-            this.lbMKC.AutoSize = true;
-            this.lbMKC.BackColor = System.Drawing.Color.Red;
-            this.lbMKC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMKC.Location = new System.Drawing.Point(171, 145);
-            this.lbMKC.Name = "lbMKC";
-            this.lbMKC.Size = new System.Drawing.Size(41, 15);
-            this.lbMKC.TabIndex = 5;
-            this.lbMKC.Text = "label5";
             // 
             // label3
             // 
@@ -223,10 +171,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbTb;
-        private System.Windows.Forms.Label lbNL;
-        private System.Windows.Forms.Label lbMKM;
-        private System.Windows.Forms.Label lbMKC;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;

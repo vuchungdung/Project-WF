@@ -8,8 +8,9 @@ namespace DTO
 {
     public class TaiKhoan_DTO
     {
+        public string MaNV { set; get; }
         public string TenDangNhap { set; get; }
         public string MatKhau { set; get; }
-        public string QuyenHan { get; set; }
+        public string QuyenHan { set; get; }
     }
 }

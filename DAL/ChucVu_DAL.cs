@@ -31,7 +31,7 @@ namespace DAL
         }
         public bool ThemChucVu(ChucVu_DTO cv)
         {
-            string query = string.Format("Insert into ChucVu(MaChucVu,NgayLuong,TenChucVu) values(N'{0}',N'{1}','{2}','{3}',N'{4}','{5}','{6}')", cv.MaChucVu, cv.NgayLuong,cv.TenChucVu);
+            string query = string.Format("Insert into ChucVu(MaChucVu,NgayLuong,TenChucVu) values(N'{0}',N'{1}','{2}')", cv.MaChucVu, cv.NgayLuong,cv.TenChucVu);
             bool result = DataProvider.QueryData(query);
             return result;
         }

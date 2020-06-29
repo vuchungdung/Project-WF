@@ -10,22 +10,22 @@ namespace BUL
 {
     public class ChucVu_BUL
     {
-        ChucVu_DAL chucVu_DAL = new ChucVu_DAL();
+        ChucVu_DAL chucvu = new ChucVu_DAL();
         public List<ChucVu_DTO> LoadChucVu()
         {
-            return chucVu_DAL.ReadChucVu();
+            return chucvu.ReadChucVu();
         }
         public bool ThemChucVu(ChucVu_DTO cv)
         {
-            return chucVu_DAL.ThemChucVu(cv);
+            return chucvu.ThemChucVu(cv);
         }
         public bool SuaChucVu(ChucVu_DTO cv)
         {
-            return chucVu_DAL.SuaChucVu(cv);
+            return chucvu.SuaChucVu(cv);
         }
         public bool XoaChucVu(string macv)
         {
-            return chucVu_DAL.XoaChucVu(macv);
+            return chucvu.XoaChucVu(macv);
         }
     }
 }
