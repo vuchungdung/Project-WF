@@ -42,12 +42,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lbTB = new System.Windows.Forms.Label();
             this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SNL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KhongPhep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CoPhep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbTB = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -196,6 +198,8 @@
             this.TenNV,
             this.NgayLuong,
             this.SNL,
+            this.KhongPhep,
+            this.CoPhep,
             this.TL});
             this.dataGridView1.Location = new System.Drawing.Point(0, 144);
             this.dataGridView1.Name = "dataGridView1";
@@ -203,6 +207,17 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(796, 255);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // lbTB
+            // 
+            this.lbTB.AutoSize = true;
+            this.lbTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTB.ForeColor = System.Drawing.Color.Red;
+            this.lbTB.Location = new System.Drawing.Point(477, 454);
+            this.lbTB.Name = "lbTB";
+            this.lbTB.Size = new System.Drawing.Size(10, 13);
+            this.lbTB.TabIndex = 14;
+            this.lbTB.Text = ".";
             // 
             // Ma
             // 
@@ -233,23 +248,26 @@
             this.SNL.Name = "SNL";
             this.SNL.ReadOnly = true;
             // 
+            // KhongPhep
+            // 
+            this.KhongPhep.DataPropertyName = "KhongPhep";
+            this.KhongPhep.HeaderText = "Nghỉ Không Phép";
+            this.KhongPhep.Name = "KhongPhep";
+            this.KhongPhep.ReadOnly = true;
+            // 
+            // CoPhep
+            // 
+            this.CoPhep.DataPropertyName = "CoPhep";
+            this.CoPhep.HeaderText = "Nghỉ Có Phép";
+            this.CoPhep.Name = "CoPhep";
+            this.CoPhep.ReadOnly = true;
+            // 
             // TL
             // 
             this.TL.DataPropertyName = "TL";
             this.TL.HeaderText = "Tổng Lương";
             this.TL.Name = "TL";
             this.TL.ReadOnly = true;
-            // 
-            // lbTB
-            // 
-            this.lbTB.AutoSize = true;
-            this.lbTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTB.ForeColor = System.Drawing.Color.Red;
-            this.lbTB.Location = new System.Drawing.Point(477, 454);
-            this.lbTB.Name = "lbTB";
-            this.lbTB.Size = new System.Drawing.Size(10, 13);
-            this.lbTB.TabIndex = 14;
-            this.lbTB.Text = ".";
             // 
             // TinhLuong
             // 
@@ -284,11 +302,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbTB;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ma;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn SNL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KhongPhep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CoPhep;
         private System.Windows.Forms.DataGridViewTextBoxColumn TL;
-        private System.Windows.Forms.Button button1;
     }
 }

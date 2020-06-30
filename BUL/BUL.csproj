@@ -47,6 +47,8 @@
     <Compile Include="PhongBan_BUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoan_BUL.cs" />
+    <Compile Include="BangLuong_BUL.cs" />
+    <Compile Include="TinhLuong_BUL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

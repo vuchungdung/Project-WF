@@ -41,5 +41,11 @@ namespace DAL
             bool result = DataProvider.QueryData(query);
             return result;
         }
+        public bool XoaChamCongTheoNgay(DateTime ngay)
+        {
+            string query = string.Format("Delete ChamCong where MaNV='" + ngay + "'");
+            bool result = DataProvider.QueryData(query);
+            return result;
+        }
     }
 }
