@@ -15,5 +15,9 @@ namespace BUL
         {
             return chamCong_DAL.LoadChamCong();
         }
+        public bool ThemChamCong(ChamCong_DTO cc)
+        {
+            return chamCong_DAL.ThemChamCong(cc);
+        }
     }
 }

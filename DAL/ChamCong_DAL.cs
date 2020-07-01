@@ -31,7 +31,7 @@ namespace DAL
         }
         public bool ThemChamCong(ChamCong_DTO cc)
         {
-            string query = string.Format("Insert into ChamCong(MaNV,Ngay,TinhTrang) values('{0}''{1}','{2}')", cc.MaNV, cc.Ngay, cc.TinhTrang);
+            string query = string.Format("Insert into ChamCong(MaNV,Ngay,TinhTrang) values('{0}','{1}',N'{2}')", cc.MaNV, cc.Ngay, cc.TinhTrang);
             bool result = DataProvider.QueryData(query);
             return result;
         }

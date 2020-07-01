@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.MaPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenPB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,32 +46,32 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Location = new System.Drawing.Point(20, 223);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(788, 231);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridView1
+            // dataGridView2
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaPB,
             this.TenPB,
             this.SoNV});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(788, 228);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(788, 228);
+            this.dataGridView2.TabIndex = 0;
             // 
             // MaPB
             // 
@@ -135,9 +135,8 @@
             this.lbSoNV.ForeColor = System.Drawing.Color.White;
             this.lbSoNV.Location = new System.Drawing.Point(541, 68);
             this.lbSoNV.Name = "lbSoNV";
-            this.lbSoNV.Size = new System.Drawing.Size(35, 13);
+            this.lbSoNV.Size = new System.Drawing.Size(0, 13);
             this.lbSoNV.TabIndex = 1;
-            this.lbSoNV.Text = "label1";
             // 
             // label4
             // 
@@ -225,8 +224,9 @@
             this.Controls.Add(this.panel1);
             this.Name = "PhongBan";
             this.Size = new System.Drawing.Size(830, 487);
+            this.Load += new System.EventHandler(this.PhongBan_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -236,7 +236,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPB;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPB;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoNV;

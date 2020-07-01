@@ -10,19 +10,20 @@ namespace DAL
 {
     public class PhongBan_DAL
     {
-        public List<PhongBan_DTO> ReadPhongBan()
+        public List<PhongBan_DTO_View> ReadPhongBan()
         {
-            string query = "Select * from ChucVu";
+            string query = string.Format("select pb.MaPB,pb.TenPB,count(nv.MaNV) SoLuong from NhanVien nv, PhongBan pb where pb.MaPB = nv.MaPB group by pb.MaPB,pb.TenPB");
             DataTable dataTable = new DataTable();
             dataTable = DataProvider.ReadData(query);
-            List<PhongBan_DTO> listTD = new List<PhongBan_DTO>();
+            List<PhongBan_DTO_View> listTD = new List<PhongBan_DTO_View>();
             if (dataTable != null && dataTable.Rows.Count > 0)
             {
                 for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
-                    PhongBan_DTO td = new PhongBan_DTO();
+                    PhongBan_DTO_View td = new PhongBan_DTO_View();
                     td.MaPB = dataTable.Rows[i]["MaPB"].ToString();
                     td.TenPB = dataTable.Rows[i]["TenPB"].ToString();
+                    td.SoNV = Convert.ToInt32(dataTable.Rows[i]["SoLuong"]);
                     listTD.Add(td);
                 }
             }
@@ -42,7 +43,7 @@ namespace DAL
         }
         public bool SuaPhongBan(PhongBan_DTO cv)
         {
-            string query = string.Format("Update PhongBan set TenPB='{0}' where MaChucVu='{1}'", cv.TenPB,cv.MaPB);
+            string query = string.Format("Update PhongBan set TenPB='{0}' where MaPB='{1}'", cv.TenPB,cv.MaPB);
             bool result = DataProvider.QueryData(query);
             return result;
         }

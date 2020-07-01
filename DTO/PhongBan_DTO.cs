@@ -11,4 +11,10 @@ namespace DTO
         public string MaPB { set; get; }
         public string TenPB { set; get; }
     }
+    public class PhongBan_DTO_View
+    {
+        public string MaPB { set; get; }
+        public string TenPB { set; get; }
+        public int SoNV { set; get; }
+    }
 }

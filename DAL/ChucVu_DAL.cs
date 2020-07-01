@@ -31,19 +31,19 @@ namespace DAL
         }
         public bool ThemChucVu(ChucVu_DTO cv)
         {
-            string query = string.Format("Insert into ChucVu(MaChucVu,NgayLuong,TenChucVu) values(N'{0}',N'{1}','{2}')", cv.MaChucVu, cv.NgayLuong,cv.TenChucVu);
+            string query = string.Format("Insert into ChucVu(MaChucVu,NgayLuong,TenChucVu) values(N'{0}',{1},N'{2}')", cv.MaChucVu, cv.NgayLuong,cv.TenChucVu);
             bool result = DataProvider.QueryData(query);
             return result;
         }
         public bool XoaChucVu(string macv)
         {
-            string query = string.Format("Delete from ChucVu where MaNV ='" + macv + "'");
+            string query = string.Format("Delete from ChucVu where MaChucVu ='" + macv + "'");
             bool result = DataProvider.QueryData(query);
             return result;
         }
         public bool SuaChucVu(ChucVu_DTO cv)
         {
-            string query = string.Format("Update ChucVu set NgayLuong='{0}',TenChucVu='{1} where MaChucVu='{2}'", cv.NgayLuong, cv.TenChucVu, cv.MaChucVu);
+            string query = string.Format("Update ChucVu set NgayLuong={0},TenChucVu=N'{1}' where MaChucVu='{2}'", cv.NgayLuong, cv.TenChucVu, cv.MaChucVu);
             bool result = DataProvider.QueryData(query);
             return result;
         }

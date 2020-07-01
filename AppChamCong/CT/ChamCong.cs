@@ -19,8 +19,6 @@ namespace AppChamCong.CT
             InitializeComponent();
         }
         ChamCong_BUL chamCong = new ChamCong_BUL();
-        int ngay = DateTime.Now.Day, thang = DateTime.Now.Month, nam = DateTime.Now.Year, dem = 0;
-        string manv = null, a = null, b = null;
         private void btCapNhat_Click(object sender, EventArgs e)
         {
             int d = 0;
@@ -37,9 +35,12 @@ namespace AppChamCong.CT
             {
                 for (int i = 0; i < dataGridView2.RowCount; i++)
                 {
+                    ChamCong_DTO cc = new ChamCong_DTO();
                     string tinhtrang = dataGridView2.Rows[i].Cells["TinhTrang"].Value.ToString();
-                    manv = dataGridView2.Rows[i].Cells["Ma"].Value.ToString();
-                    
+                    cc.MaNV = dataGridView2.Rows[i].Cells["MaNV"].Value.ToString();
+                    cc.Ngay = dtpNgay.Value;
+                    cc.TinhTrang = dataGridView2.Rows[i].Cells["TinhTrang"].Value.ToString();
+                    chamCong.ThemChamCong(cc);
                 }
                 
             }

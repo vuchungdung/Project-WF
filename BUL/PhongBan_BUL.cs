@@ -11,7 +11,7 @@ namespace BUL
     public class PhongBan_BUL
     {
         PhongBan_DAL phongBan = new PhongBan_DAL();
-        public List<PhongBan_DTO> LoadChucVu()
+        public List<PhongBan_DTO_View> LoadPB()
         {
             return phongBan.ReadPhongBan();
         }
