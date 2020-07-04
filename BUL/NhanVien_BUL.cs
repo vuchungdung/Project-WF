@@ -15,9 +15,9 @@ namespace BUL
         {
             return nhanVien_DAL.LoadNhanVien();
         }
-        public List<NhanVien_DTO> LoadNhanVienTheoCV(string keyword)
+        public List<NhanVien_DTO> LoadNhanVienTheoPB(string keyword)
         {
-            return nhanVien_DAL.LoadNhanVienTheoCV(keyword);
+            return nhanVien_DAL.LoadNhanVienTheoPB(keyword);
         }
         public bool InsertNhanVien(NhanVien_DTO nv)
         {

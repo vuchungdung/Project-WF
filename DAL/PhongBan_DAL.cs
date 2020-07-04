@@ -29,9 +29,27 @@ namespace DAL
             }
             return listTD;
         }
+        public List<PhongBan_DTO> ReadPhongBanChuaNV()
+        {
+            string query = string.Format("select pb.MaPB,pb.TenPB from PhongBan pb where pb.MaPB not in (select nv.MaPB from NhanVien nv)");
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.ReadData(query);
+            List<PhongBan_DTO> listTD = new List<PhongBan_DTO>();
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    PhongBan_DTO td = new PhongBan_DTO();
+                    td.MaPB = dataTable.Rows[i]["MaPB"].ToString();
+                    td.TenPB = dataTable.Rows[i]["TenPB"].ToString();
+                    listTD.Add(td);
+                }
+            }
+            return listTD;
+        }
         public bool ThemPhongBan(PhongBan_DTO cv)
         {
-            string query = string.Format("Insert into PhongBan(MaPB,TenPB) values(N'{0}',N'{1}')", cv.MaPB, cv.TenPB);
+            string query = string.Format("Insert into PhongBan(MaPB,TenPB) values('{0}',N'{1}')", cv.MaPB, cv.TenPB);
             bool result = DataProvider.QueryData(query);
             return result;
         }
@@ -43,7 +61,7 @@ namespace DAL
         }
         public bool SuaPhongBan(PhongBan_DTO cv)
         {
-            string query = string.Format("Update PhongBan set TenPB='{0}' where MaPB='{1}'", cv.TenPB,cv.MaPB);
+            string query = string.Format("Update PhongBan set TenPB=N'{0}' where MaPB='{1}'", cv.TenPB,cv.MaPB);
             bool result = DataProvider.QueryData(query);
             return result;
         }

@@ -15,5 +15,13 @@ namespace BUL
         {
             return taiKhoan_DAL.Login(user,pass);
         }
+        public bool ChangePass(string tk, string mk)
+        {
+            return taiKhoan_DAL.ChangePass(tk, mk);
+        }
+        public TaiKhoan_DTO GetTaiKhoan(string tk,string mk)
+        {
+            return taiKhoan_DAL.GetTaiKhoan(tk, mk);
+        }
     }
 }

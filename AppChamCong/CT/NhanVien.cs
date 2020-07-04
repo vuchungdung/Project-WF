@@ -21,7 +21,9 @@ namespace AppChamCong.CT
 
         NhanVien_BUL nhanVien = new NhanVien_BUL();
         ChucVu_BUL chucVu = new ChucVu_BUL();
+        PhongBan_BUL phongban = new PhongBan_BUL();
         List<ChucVu_DTO> listCV = new List<ChucVu_DTO>();
+        List<PhongBan_DTO_View> listPB = new List<PhongBan_DTO_View>();
         List<NhanVien_DTO> listNV = new List<NhanVien_DTO>();
 
         public void ResetValueText()
@@ -46,6 +48,10 @@ namespace AppChamCong.CT
             cbChucVu.DataSource = listCV;
             cbChucVu.DisplayMember = "TenChucVu";
             cbChucVu.ValueMember = "MaChucVu";
+            listPB = phongban.LoadPB();
+            cbChucVu.DataSource = listPB;
+            cbChucVu.DisplayMember = "TenPB";
+            cbChucVu.ValueMember = "MaPB";
             LoadDataNhanVien();
         }
 
@@ -92,6 +98,7 @@ namespace AppChamCong.CT
             nv.DiaChi = txtDiaChi.Text;
             nv.SoDienThoai = txtSDT.Text;
             nv.ChucVu = cbChucVu.SelectedValue.ToString();
+            nv.PhongBan = comboBox1.SelectedValue.ToString();
             if (nhanVien.InsertNhanVien(nv) == true)
             {
                 listNV.Add(nv);
@@ -133,12 +140,7 @@ namespace AppChamCong.CT
 
         private void cbChucVu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbChucVu.SelectedItem != null)
-            {
-                string keyword = cbChucVu.SelectedValue.ToString();
-                dataGridViewNV.DataSource = typeof(List<NhanVien_DTO>);
-                dataGridViewNV.DataSource = nhanVien.LoadNhanVienTheoCV(keyword);
-            }
+            
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -160,6 +162,16 @@ namespace AppChamCong.CT
             nv.DiaChi = txtDiaChi.Text;
             nhanVien.UpdateNhanVien(nv);
             LoadDataNhanVien();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem != null)
+            {
+                string keyword = comboBox1.SelectedValue.ToString();
+                dataGridViewNV.DataSource = typeof(List<NhanVien_DTO>);
+                dataGridViewNV.DataSource = nhanVien.LoadNhanVienTheoPB(keyword);
+            }
         }
     }
 }

@@ -91,5 +91,28 @@ namespace DAL
             bool result = DataProvider.QueryData(query);
             return result;
         }
+        public TaiKhoan_DTO GetTaiKhoan(string tk,string mk) 
+        {
+            string query = "Select tk.TenDangNhap, tk.MatKhau, tk.QuyenHan, tk.MaNV from TaiKhoan tk where tk.TenDangNhap = '"+tk+"' and tk.MạtKhau = '"+mk+"'";
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.ReadData(query);
+            TaiKhoan_DTO model;
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                model = new TaiKhoan_DTO();
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {                  
+                    model.MaNV = dataTable.Rows[i]["MaNV"].ToString();                  
+                    model.TenDangNhap = dataTable.Rows[i]["TenDangNhap"].ToString();
+                    model.MatKhau = dataTable.Rows[i]["MatKhau"].ToString();
+                    model.QuyenHan = dataTable.Rows[i]["QuyenHan"].ToString();                    
+                }
+                return model;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

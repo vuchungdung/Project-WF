@@ -65,26 +65,6 @@ namespace AppChamCong.CT
             LoadDataChucVu();
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DialogResult R = MessageBox.Show("BẠN CÓ THỰC SỰ MUỐN XÓA", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
-                if (R == DialogResult.Yes)
-                {
-                    if (dataGridView1.SelectedRows != null)
-                    {
-                        string macv = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                        chucVu.XoaChucVu(macv);
-                        LoadDataChucVu();
-                    }
-                }
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message);
-            }
-        }
         public void ResetValueText()
         {
             txtMaCV.ReadOnly = false;

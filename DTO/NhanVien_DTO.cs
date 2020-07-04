@@ -15,5 +15,6 @@ namespace DTO
         public string DiaChi { set; get; }
         public string SoDienThoai { set; get; }
         public string ChucVu { set; get; }
+        public string PhongBan { set; get; }
     }
 }

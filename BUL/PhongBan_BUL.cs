@@ -15,15 +15,19 @@ namespace BUL
         {
             return phongBan.ReadPhongBan();
         }
-        public bool ThemChucVu(PhongBan_DTO cv)
+        public List<PhongBan_DTO> LoadPBChuaNV()
+        {
+            return phongBan.ReadPhongBanChuaNV();
+        }
+        public bool ThemPhongBan(PhongBan_DTO cv)
         {
             return phongBan.ThemPhongBan(cv);
         }
-        public bool SuaChucVu(PhongBan_DTO cv)
+        public bool SuaPhongBan(PhongBan_DTO cv)
         {
             return phongBan.SuaPhongBan(cv);
         }
-        public bool XoaChucVu(string macv)
+        public bool XoaPhongBan(string macv)
         {
             return phongBan.XoaPhongBan(macv);
         }

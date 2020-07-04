@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace AppChamCong
         {
             InitializeComponent();
         }
+        SqlDataReader dr;
         TaiKhoan_BUL taiKhoan_BUL = new TaiKhoan_BUL();
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
@@ -34,6 +36,5 @@ namespace AppChamCong
                 txtMatKhau.Text = "";
             }
         }
-
     }
 }

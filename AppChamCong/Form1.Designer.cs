@@ -258,6 +258,7 @@
             this.btnDangXuat.Size = new System.Drawing.Size(70, 70);
             this.btnDangXuat.TabIndex = 7;
             this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click_1);
             // 
             // btnTaoTK
             // 

@@ -75,7 +75,8 @@ namespace AppChamCong
 
         private void button12_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Bạn muốn thoát?", "Chu Ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                Application.Exit();
         }
 
         private void btnDoiMK_Click_1(object sender, EventArgs e)
@@ -111,6 +112,12 @@ namespace AppChamCong
             CT.TaoTaiKhoan nv = new CT.TaoTaiKhoan();
             panel1.Controls.Clear();
             panel1.Controls.Add(nv);
+        }
+
+        private void btnDangXuat_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn muốn đăng xuất?", "Chu Ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                Application.Restart();
         }
     }
 }

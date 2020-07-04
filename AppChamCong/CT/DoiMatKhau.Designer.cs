@@ -39,12 +39,18 @@
             this.txtMKM = new System.Windows.Forms.TextBox();
             this.txtMKC = new System.Windows.Forms.TextBox();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.label5_err = new System.Windows.Forms.Label();
+            this.label7_err = new System.Windows.Forms.Label();
+            this.label8_err = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.label8_err);
+            this.panel1.Controls.Add(this.label7_err);
+            this.panel1.Controls.Add(this.label5_err);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label6);
@@ -153,6 +159,34 @@
             this.btnLuu.TabIndex = 4;
             this.btnLuu.Text = "Cập Nhật";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // label5_err
+            // 
+            this.label5_err.AutoSize = true;
+            this.label5_err.Location = new System.Drawing.Point(168, 144);
+            this.label5_err.Name = "label5_err";
+            this.label5_err.Size = new System.Drawing.Size(35, 13);
+            this.label5_err.TabIndex = 5;
+            this.label5_err.Text = "label5";
+            // 
+            // label7_err
+            // 
+            this.label7_err.AutoSize = true;
+            this.label7_err.Location = new System.Drawing.Point(168, 187);
+            this.label7_err.Name = "label7_err";
+            this.label7_err.Size = new System.Drawing.Size(35, 13);
+            this.label7_err.TabIndex = 6;
+            this.label7_err.Text = "label7";
+            // 
+            // label8_err
+            // 
+            this.label8_err.AutoSize = true;
+            this.label8_err.Location = new System.Drawing.Point(168, 230);
+            this.label8_err.Name = "label8_err";
+            this.label8_err.Size = new System.Drawing.Size(35, 13);
+            this.label8_err.TabIndex = 7;
+            this.label8_err.Text = "label8";
             // 
             // DoiMatKhau
             // 
@@ -181,5 +215,8 @@
         private System.Windows.Forms.TextBox txtMKM;
         private System.Windows.Forms.TextBox txtMKC;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Label label8_err;
+        private System.Windows.Forms.Label label7_err;
+        private System.Windows.Forms.Label label5_err;
     }
 }
