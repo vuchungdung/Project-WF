@@ -47,6 +47,24 @@ namespace DAL
             }
             return listTD;
         }
+        public List<PhongBan_DTO> ReadAllPhongBan()
+        {
+            string query = string.Format("select pb.MaPB,pb.TenPB from PhongBan pb");
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.ReadData(query);
+            List<PhongBan_DTO> listTD = new List<PhongBan_DTO>();
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    PhongBan_DTO td = new PhongBan_DTO();
+                    td.MaPB = dataTable.Rows[i]["MaPB"].ToString();
+                    td.TenPB = dataTable.Rows[i]["TenPB"].ToString();
+                    listTD.Add(td);
+                }
+            }
+            return listTD;
+        }
         public bool ThemPhongBan(PhongBan_DTO cv)
         {
             string query = string.Format("Insert into PhongBan(MaPB,TenPB) values('{0}',N'{1}')", cv.MaPB, cv.TenPB);

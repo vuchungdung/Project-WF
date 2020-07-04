@@ -19,6 +19,10 @@ namespace BUL
         {
             return phongBan.ReadPhongBanChuaNV();
         }
+        public List<PhongBan_DTO> LoadAllPB()
+        {
+            return phongBan.ReadAllPhongBan();
+        }
         public bool ThemPhongBan(PhongBan_DTO cv)
         {
             return phongBan.ThemPhongBan(cv);

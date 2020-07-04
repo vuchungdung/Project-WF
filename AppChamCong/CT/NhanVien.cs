@@ -23,7 +23,7 @@ namespace AppChamCong.CT
         ChucVu_BUL chucVu = new ChucVu_BUL();
         PhongBan_BUL phongban = new PhongBan_BUL();
         List<ChucVu_DTO> listCV = new List<ChucVu_DTO>();
-        List<PhongBan_DTO_View> listPB = new List<PhongBan_DTO_View>();
+        List<PhongBan_DTO> listPB = new List<PhongBan_DTO>();
         List<NhanVien_DTO> listNV = new List<NhanVien_DTO>();
 
         public void ResetValueText()
@@ -33,7 +33,6 @@ namespace AppChamCong.CT
             txtHoTen.Clear();
             txtDiaChi.Clear();
             txtSDT.Clear();
-            cbChucVu.Text = null;
             cbNam.Checked = true;
         }
         public void LoadDataNhanVien()
@@ -48,10 +47,10 @@ namespace AppChamCong.CT
             cbChucVu.DataSource = listCV;
             cbChucVu.DisplayMember = "TenChucVu";
             cbChucVu.ValueMember = "MaChucVu";
-            listPB = phongban.LoadPB();
-            cbChucVu.DataSource = listPB;
-            cbChucVu.DisplayMember = "TenPB";
-            cbChucVu.ValueMember = "MaPB";
+            listPB = phongban.LoadAllPB();
+            comboBox1.DataSource = listPB;
+            comboBox1.DisplayMember = "TenPB";
+            comboBox1.ValueMember = "MaPB";
             LoadDataNhanVien();
         }
 
@@ -73,6 +72,7 @@ namespace AppChamCong.CT
             }
             dtNgaySinh.Value = (DateTime)dv.Cells["NgaySinh"].Value;
             cbChucVu.SelectedValue = dv.Cells["ChucVu"].Value;
+            comboBox1.SelectedValue = dv.Cells["PhongBan"].Value;
         }
 
         private void btnHuy_Click_1(object sender, EventArgs e)
@@ -159,9 +159,11 @@ namespace AppChamCong.CT
             nv.NgaySinh = dtNgaySinh.Value.Date;
             nv.SoDienThoai = txtSDT.Text;
             nv.ChucVu = cbChucVu.SelectedValue.ToString();
+            nv.PhongBan = comboBox1.SelectedValue.ToString();
             nv.DiaChi = txtDiaChi.Text;
             nhanVien.UpdateNhanVien(nv);
             LoadDataNhanVien();
+            ResetValueText();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -172,6 +174,11 @@ namespace AppChamCong.CT
                 dataGridViewNV.DataSource = typeof(List<NhanVien_DTO>);
                 dataGridViewNV.DataSource = nhanVien.LoadNhanVienTheoPB(keyword);
             }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

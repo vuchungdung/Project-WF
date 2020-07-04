@@ -25,7 +25,7 @@ namespace AppChamCong.CT
             for (int i = 0; i < dataGridViewTL.RowCount; i++)
             {
                 string manv = dataGridViewTL.Rows[i].Cells["MaNV"].Value.ToString();
-                dataGridViewTL.Rows[i].Cells["TongLuong"].Value = TinhLuongNV(manv);
+                dataGridViewTL.Rows[i].Cells["TongLuong"].Value = TinhLuongNV(manv,i);
             }
         }
 
@@ -33,9 +33,12 @@ namespace AppChamCong.CT
         {
             LoadTinhLuong();
         }
-        public int TinhLuongNV(string manv)
+        public int TinhLuongNV(string manv,int i)
         {
-            int result = 1000000;
+            int songaydilam = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["DiLam"].Value);
+            int ngayluong = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["NgayLuong"].Value);
+            int nghicophep = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["CoPhep"].Value);
+            int result = (songaydilam * ngayluong) + nghicophep * (ngayluong / 2);
             return result;
         }
     }

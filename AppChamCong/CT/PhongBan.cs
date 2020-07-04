@@ -77,23 +77,15 @@ namespace AppChamCong.CT
                 {
                     if (dataGridViewPB.SelectedRows != null)
                     {
-                        string mapb = dataGridViewPB.SelectedRows[0].Cells[0].Value.ToString();
-                        int sonv = Convert.ToInt32(dataGridViewPB.SelectedRows[0].Cells[2].Value);
-                        if(sonv == 0)
-                        {
-                            phongBan.XoaPhongBan(mapb);
-                            LoadData();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Phong ban này có nhân viên! Không thể xóa","Thông Báo");
-                        }
+                        string mapb = dataGridViewPB2.SelectedRows[0].Cells[0].Value.ToString();
+                        phongBan.XoaPhongBan(mapb);
+                        LoadData2();
                     }
                 }
             }
             catch (Exception erro)
             {
-                MessageBox.Show(erro.Message);
+                MessageBox.Show("Phòng ban đang có nhân viên","Thông Báo");
             }
         }
 

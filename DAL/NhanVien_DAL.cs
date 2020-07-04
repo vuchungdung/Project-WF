@@ -29,14 +29,15 @@ namespace DAL
                     nv.DiaChi = dataTable.Rows[i]["DiaChi"].ToString();
                     nv.SoDienThoai = dataTable.Rows[i]["SoDienThoai"].ToString();
                     nv.ChucVu = dataTable.Rows[i]["MaChucVu"].ToString();
+                    nv.PhongBan = dataTable.Rows[i]["MaPB"].ToString();
                     ListNV.Add(nv);
                 }
             }
             return ListNV;
         }
-        public List<NhanVien_DTO> LoadNhanVienTheoCV(string keyword)
+        public List<NhanVien_DTO> LoadNhanVienTheoPB(string keyword)
         {
-            string query = "Select * from NhanVien where MaChucVu='"+keyword+"'";
+            string query = "Select * from NhanVien where MaPB='"+keyword+"'";
             DataTable dataTable = new DataTable();
             dataTable = DataProvider.ReadData(query);
             List<NhanVien_DTO> ListNV = new List<NhanVien_DTO>();
@@ -53,6 +54,7 @@ namespace DAL
                     nv.DiaChi = dataTable.Rows[i]["DiaChi"].ToString();
                     nv.SoDienThoai = dataTable.Rows[i]["SoDienThoai"].ToString();
                     nv.ChucVu = dataTable.Rows[i]["MaChucVu"].ToString();
+                    nv.PhongBan = dataTable.Rows[i]["MaPB"].ToString();
                     ListNV.Add(nv);
                 }
             }
@@ -60,7 +62,7 @@ namespace DAL
         }
         public bool InsertNhanVien(NhanVien_DTO nv)
         {
-            string query = string.Format("Insert into NhanVien(MaNV,HoTen,GioiTinh,NgaySinh,DiaChi,SoDienThoai,MaChucVu) values(N'{0}',N'{1}','{2}','{3}',N'{4}','{5}','{6}')",nv.MaNhanVien, nv.HoTen, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SoDienThoai, nv.ChucVu);
+            string query = string.Format("Insert into NhanVien(MaNV,HoTen,GioiTinh,NgaySinh,DiaChi,SoDienThoai,MaChucVu,MaPB) values(N'{0}',N'{1}','{2}','{3}',N'{4}','{5}','{6}','{7}')",nv.MaNhanVien, nv.HoTen, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SoDienThoai, nv.ChucVu, nv.PhongBan);
             bool result = DataProvider.QueryData(query);
             return result;
         }
@@ -72,7 +74,7 @@ namespace DAL
         }
         public bool UpdateNhanVien(NhanVien_DTO nv)
         {
-            string query = string.Format("Update NhanVien set HoTen=N'{0}',GioiTinh='{1}',NgaySinh='{2}',DiaChi=N'{3}',SoDienThoai='{4}',MaChucVu='{5}' where MaNV='{6}'",nv.HoTen, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SoDienThoai, nv.ChucVu, nv.MaNhanVien);
+            string query = string.Format("Update NhanVien set HoTen=N'{0}',GioiTinh='{1}',NgaySinh='{2}',DiaChi=N'{3}',SoDienThoai='{4}',MaChucVu='{5}',MaPB ='{7}' where MaNV='{6}'",nv.HoTen, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SoDienThoai, nv.ChucVu, nv.MaNhanVien,nv.PhongBan);
             bool result = DataProvider.QueryData(query);
             return result;
         }
