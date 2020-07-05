@@ -56,6 +56,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -77,7 +79,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(823, 98);
+            this.tabPage2.Size = new System.Drawing.Size(824, 98);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quản lý";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -307,12 +309,14 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label2);
+            this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(823, 98);
+            this.tabPage3.Size = new System.Drawing.Size(824, 98);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Thống kê";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -342,6 +346,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(862, 472);
             this.panel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(148, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 16);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Chấm Công";
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(153, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 70);
+            this.button2.TabIndex = 20;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -394,5 +416,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
     }
 }

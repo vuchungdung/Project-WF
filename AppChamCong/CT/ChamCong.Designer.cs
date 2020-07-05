@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btCapNhat = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,14 +62,14 @@
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNV,
@@ -164,9 +164,9 @@
             this.lbMa.ForeColor = System.Drawing.Color.White;
             this.lbMa.Location = new System.Drawing.Point(109, 31);
             this.lbMa.Name = "lbMa";
-            this.lbMa.Size = new System.Drawing.Size(51, 16);
+            this.lbMa.Size = new System.Drawing.Size(29, 16);
             this.lbMa.TabIndex = 11;
-            this.lbMa.Text = "label3";
+            this.lbMa.Text = "Mã";
             // 
             // label5
             // 
@@ -185,9 +185,9 @@
             this.lbTen.ForeColor = System.Drawing.Color.White;
             this.lbTen.Location = new System.Drawing.Point(269, 31);
             this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(51, 16);
+            this.lbTen.Size = new System.Drawing.Size(53, 16);
             this.lbTen.TabIndex = 9;
-            this.lbTen.Text = "label3";
+            this.lbTen.Text = "Họ tên";
             // 
             // label7
             // 
@@ -206,9 +206,8 @@
             this.lbTinhTrang.ForeColor = System.Drawing.Color.White;
             this.lbTinhTrang.Location = new System.Drawing.Point(483, 31);
             this.lbTinhTrang.Name = "lbTinhTrang";
-            this.lbTinhTrang.Size = new System.Drawing.Size(51, 16);
+            this.lbTinhTrang.Size = new System.Drawing.Size(0, 16);
             this.lbTinhTrang.TabIndex = 7;
-            this.lbTinhTrang.Text = "label3";
             // 
             // button1
             // 

@@ -41,9 +41,13 @@ namespace AppChamCong.CT
                     cc.MaNV = dataGridView2.Rows[i].Cells["MaNV"].Value.ToString();
                     cc.Ngay = dtpNgay.Value;
                     cc.TinhTrang = dataGridView2.Rows[i].Cells["TinhTrang"].Value.ToString();
-                    chamCong.ThemChamCong(cc);
+                    chamCong.ThemChamCong(cc);                   
                 }
-                
+                MessageBox.Show("Đã chấm công", "Thông Báo");
+            }
+            else
+            {
+                MessageBox.Show("Thông tin chưa đầy đủ!", "Thông Báo");
             }
         }
 
@@ -71,17 +75,18 @@ namespace AppChamCong.CT
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex != 0 && dem == 1)
+            if (e.ColumnIndex != 0)
             {
-                lbMa.Text = dataGridView2.CurrentRow.Cells["Ma"].Value.ToString();
-                lbTen.Text = dataGridView2.CurrentRow.Cells["Ten"].Value.ToString();
-                lbTinhTrang.Text = dataGridView2.CurrentRow.Cells["TinhTrang"].Value.ToString();
-            }
-            else if (e.ColumnIndex != 0 && dem == 0)
-            {
-                lbMa.Text = dataGridView2.CurrentRow.Cells["Ma"].Value.ToString();
-                lbTen.Text = dataGridView2.CurrentRow.Cells["Ten"].Value.ToString();
-                lbTinhTrang.Text = "Chưa có giá trị";
+                lbMa.Text = dataGridView2.CurrentRow.Cells["MaNV"].Value.ToString();
+                lbTen.Text = dataGridView2.CurrentRow.Cells["HoTen"].Value.ToString();
+                if(dataGridView2.CurrentRow.Cells["TinhTrang"].Value == null)
+                {
+                    lbTinhTrang.Text = "";
+                }
+                else
+                {
+                    lbTinhTrang.Text = dataGridView2.CurrentRow.Cells["TinhTrang"].Value.ToString();
+                }
             }
         }
     }

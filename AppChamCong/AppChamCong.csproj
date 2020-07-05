@@ -102,6 +102,12 @@
     <Compile Include="CT\TaoTaiKhoan.Designer.cs">
       <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="CT\TheoDoiChamCong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CT\TheoDoiChamCong.Designer.cs">
+      <DependentUpon>TheoDoiChamCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="CT\TinhLuong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CT\TaoTaiKhoan.resx">
       <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CT\TheoDoiChamCong.resx">
+      <DependentUpon>TheoDoiChamCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CT\TinhLuong.resx">
       <DependentUpon>TinhLuong.cs</DependentUpon>

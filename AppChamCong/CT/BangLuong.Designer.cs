@@ -64,7 +64,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 431);
             this.panel1.TabIndex = 11;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btXem
             // 
@@ -146,11 +145,11 @@
             this.Thang,
             this.Nam,
             this.TongLuong});
-            this.dataGridViewBL.Location = new System.Drawing.Point(0, 55);
+            this.dataGridViewBL.Location = new System.Drawing.Point(0, 34);
             this.dataGridViewBL.Name = "dataGridViewBL";
             this.dataGridViewBL.ReadOnly = true;
             this.dataGridViewBL.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewBL.Size = new System.Drawing.Size(799, 351);
+            this.dataGridViewBL.Size = new System.Drawing.Size(799, 364);
             this.dataGridViewBL.TabIndex = 0;
             // 
             // MaNV
@@ -159,7 +158,6 @@
             this.MaNV.HeaderText = "Mã Nhân Viên";
             this.MaNV.Name = "MaNV";
             this.MaNV.ReadOnly = true;
-            this.MaNV.Width = 92;
             // 
             // TenNV
             // 
@@ -175,7 +173,7 @@
             this.NgayLuong.HeaderText = "Ngày Lương";
             this.NgayLuong.Name = "NgayLuong";
             this.NgayLuong.ReadOnly = true;
-            this.NgayLuong.Width = 83;
+            this.NgayLuong.Width = 90;
             // 
             // DiLam
             // 
@@ -183,7 +181,7 @@
             this.DiLam.HeaderText = "Số Ngày Làm";
             this.DiLam.Name = "DiLam";
             this.DiLam.ReadOnly = true;
-            this.DiLam.Width = 70;
+            this.DiLam.Width = 96;
             // 
             // KhongPhep
             // 

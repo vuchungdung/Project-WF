@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DTO;
 using BUL;
 using AppChamCong.CommonService;
+using DAL;
 
 namespace AppChamCong.CT
 {
@@ -20,11 +21,6 @@ namespace AppChamCong.CT
             InitializeComponent();
         }
         BangLuong_BUL bangLuong = new BangLuong_BUL();
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void BangLuong_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -38,14 +34,7 @@ namespace AppChamCong.CT
         private void button1_Click(object sender, EventArgs e)
         {
             ExportExcel excel = new ExportExcel();
-            // Lấy về nguồn dữ liệu cần Export là 1 DataTable
-            // DataTable này mỗi bạn lấy mỗi khác. 
-            // Ở đây tôi dùng BindingSouce có tên bs nên tôi ép kiểu như sau:
-            // Bạn nào gán trực tiếp vào DataGridView thì ép kiểu DataSource của
-            // DataGridView nhé 
-            DataTable dt = new DataTable();
-            dt = dataGridViewBL.DataSource as DataTable;
-            excel.Export(dt, "Danh sach", "DANH SÁCH BẢNG LƯƠNG");
+            excel.Export(dataGridViewBL, @"D:\", "DanhSachBangLuong");
         }
     }
 }
