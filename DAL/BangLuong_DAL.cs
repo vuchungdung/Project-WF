@@ -34,6 +34,7 @@ namespace DAL
                     cc.DiLam = Convert.ToInt32(dataTable.Rows[i]["DiLam"]);
                     cc.CoPhep = Convert.ToInt32(dataTable.Rows[i]["CoPhep"]);
                     cc.KhongPhep = Convert.ToInt32(dataTable.Rows[i]["KhongPhep"]);
+                    cc.Nam = DateTime.Now.Year;
                     ListNV.Add(cc);
                 }
             }
@@ -59,13 +60,40 @@ namespace DAL
                 {
                     cc = new BangLuong_DTO();
                     cc.MaNV = dataTable.Rows[i]["MaNV"].ToString();
-                    cc.TenNV = dataTable.Rows[i]["HoTen"].ToString();
+                    cc.TenNV = dataTable.Rows[i]["TenNV"].ToString();
                     cc.NgayLuong = Convert.ToInt32(dataTable.Rows[i]["NgayLuong"]);
                     cc.DiLam = Convert.ToInt32(dataTable.Rows[i]["SoNgayLam"]);
                     cc.CoPhep = Convert.ToInt32(dataTable.Rows[i]["CoPhep"]);
                     cc.KhongPhep = Convert.ToInt32(dataTable.Rows[i]["KhongPhep"]);
                     cc.Thang = Convert.ToInt32(dataTable.Rows[i]["Thang"]);
                     cc.TongLuong = Convert.ToInt32(dataTable.Rows[i]["TongLuong"]);
+                    cc.Nam = Convert.ToInt32(dataTable.Rows[i]["Nam"]);
+                    ListNV.Add(cc);
+                }
+            }
+            return ListNV;
+        }
+        public List<BangLuong_DTO> XemBangLuongTheoNam(int nam)
+        {
+            string query = "Select * from BangLuongNV nv where nv.Nam=" + nam + "";
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.LoadData(query);
+            List<BangLuong_DTO> ListNV = new List<BangLuong_DTO>();
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                BangLuong_DTO cc;
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    cc = new BangLuong_DTO();
+                    cc.MaNV = dataTable.Rows[i]["MaNV"].ToString();
+                    cc.TenNV = dataTable.Rows[i]["TenNV"].ToString();
+                    cc.NgayLuong = Convert.ToInt32(dataTable.Rows[i]["NgayLuong"]);
+                    cc.DiLam = Convert.ToInt32(dataTable.Rows[i]["SoNgayLam"]);
+                    cc.CoPhep = Convert.ToInt32(dataTable.Rows[i]["CoPhep"]);
+                    cc.KhongPhep = Convert.ToInt32(dataTable.Rows[i]["KhongPhep"]);
+                    cc.Thang = Convert.ToInt32(dataTable.Rows[i]["Thang"]);
+                    cc.TongLuong = Convert.ToInt32(dataTable.Rows[i]["TongLuong"]);
+                    cc.Nam = Convert.ToInt32(dataTable.Rows[i]["Nam"]);
                     ListNV.Add(cc);
                 }
             }

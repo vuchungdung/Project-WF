@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lbTinhTrang = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbTen = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbMa = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btCapNhat = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,76 +38,20 @@
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             this.cbCC = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbMa = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbTen = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbTinhTrang = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbTinhTrang
-            // 
-            this.lbTinhTrang.AutoSize = true;
-            this.lbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTinhTrang.ForeColor = System.Drawing.Color.White;
-            this.lbTinhTrang.Location = new System.Drawing.Point(483, 31);
-            this.lbTinhTrang.Name = "lbTinhTrang";
-            this.lbTinhTrang.Size = new System.Drawing.Size(51, 16);
-            this.lbTinhTrang.TabIndex = 7;
-            this.lbTinhTrang.Text = "label3";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(412, 33);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Tinh Trang: ";
-            // 
-            // lbTen
-            // 
-            this.lbTen.AutoSize = true;
-            this.lbTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTen.ForeColor = System.Drawing.Color.White;
-            this.lbTen.Location = new System.Drawing.Point(269, 31);
-            this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(51, 16);
-            this.lbTen.TabIndex = 9;
-            this.lbTen.Text = "label3";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(181, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Tên Nhân Viên:";
-            // 
-            // lbMa
-            // 
-            this.lbMa.AutoSize = true;
-            this.lbMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMa.ForeColor = System.Drawing.Color.White;
-            this.lbMa.Location = new System.Drawing.Point(109, 31);
-            this.lbMa.Name = "lbMa";
-            this.lbMa.Size = new System.Drawing.Size(51, 16);
-            this.lbMa.TabIndex = 11;
-            this.lbMa.Text = "label3";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(28, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Mã nhân viên:";
             // 
             // btCapNhat
             // 
             this.btCapNhat.ForeColor = System.Drawing.Color.Black;
-            this.btCapNhat.Location = new System.Drawing.Point(671, 31);
+            this.btCapNhat.Location = new System.Drawing.Point(671, 381);
             this.btCapNhat.Name = "btCapNhat";
             this.btCapNhat.Size = new System.Drawing.Size(131, 28);
             this.btCapNhat.TabIndex = 6;
@@ -141,6 +79,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(772, 303);
             this.dataGridView2.TabIndex = 13;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // MaNV
             // 
@@ -196,6 +135,7 @@
             this.cbCC.TabIndex = 15;
             this.cbCC.Text = "Chấm công tất cả";
             this.cbCC.UseVisualStyleBackColor = true;
+            this.cbCC.CheckedChanged += new System.EventHandler(this.cbCC_CheckedChanged);
             // 
             // label4
             // 
@@ -207,11 +147,85 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Chọn ngày";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(28, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Mã nhân viên:";
+            // 
+            // lbMa
+            // 
+            this.lbMa.AutoSize = true;
+            this.lbMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMa.ForeColor = System.Drawing.Color.White;
+            this.lbMa.Location = new System.Drawing.Point(109, 31);
+            this.lbMa.Name = "lbMa";
+            this.lbMa.Size = new System.Drawing.Size(51, 16);
+            this.lbMa.TabIndex = 11;
+            this.lbMa.Text = "label3";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(181, 33);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Tên Nhân Viên:";
+            // 
+            // lbTen
+            // 
+            this.lbTen.AutoSize = true;
+            this.lbTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTen.ForeColor = System.Drawing.Color.White;
+            this.lbTen.Location = new System.Drawing.Point(269, 31);
+            this.lbTen.Name = "lbTen";
+            this.lbTen.Size = new System.Drawing.Size(51, 16);
+            this.lbTen.TabIndex = 9;
+            this.lbTen.Text = "label3";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(412, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Tinh Trang: ";
+            // 
+            // lbTinhTrang
+            // 
+            this.lbTinhTrang.AutoSize = true;
+            this.lbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTinhTrang.ForeColor = System.Drawing.Color.White;
+            this.lbTinhTrang.Location = new System.Drawing.Point(483, 31);
+            this.lbTinhTrang.Name = "lbTinhTrang";
+            this.lbTinhTrang.Size = new System.Drawing.Size(51, 16);
+            this.lbTinhTrang.TabIndex = 7;
+            this.lbTinhTrang.Text = "label3";
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(671, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 28);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Sửa Chấm Công";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ChamCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btXoa);
             this.Controls.Add(this.dtpNgay);
             this.Controls.Add(this.cbCC);
@@ -234,13 +248,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbTinhTrang;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbTen;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbMa;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btCapNhat;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btXoa;
@@ -250,5 +257,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewComboBoxColumn TinhTrang;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbMa;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbTen;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbTinhTrang;
+        private System.Windows.Forms.Button button1;
     }
 }

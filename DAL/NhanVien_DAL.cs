@@ -78,5 +78,40 @@ namespace DAL
             bool result = DataProvider.QueryData(query);
             return result;
         }
+        public string LayChucVu(string manv)
+        {
+            string query = "Select cv.TenChucVu from NhanVien nv, ChucVu cv where nv.MaChucVu=cv.MaChucVu and nv.MaNV='"+manv+"'";
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.ReadData(query);
+            int a = dataTable.Rows.Count;
+            string result = dataTable.Rows[0]["TenChucVu"].ToString();
+            return result;
+        }
+        public NhanVien_DTO GetNhanVien(string manv)
+        {
+            string query = "Select * from NhanVien where MaNV='" + manv + "'";
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.ReadData(query);           
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                NhanVien_DTO nv = new NhanVien_DTO();
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {                   
+                    nv.HoTen = dataTable.Rows[i]["HoTen"].ToString();
+                    nv.GioiTinh = Convert.ToBoolean(dataTable.Rows[i]["GioiTinh"]);
+                    nv.NgaySinh = Convert.ToDateTime(dataTable.Rows[i]["NgaySinh"]);
+                    nv.DiaChi = dataTable.Rows[i]["DiaChi"].ToString();
+                    nv.SoDienThoai = dataTable.Rows[i]["SoDienThoai"].ToString();
+                }
+                return nv;
+            }
+            return null;
+        }
+        public bool UpdateTTNhanVien(NhanVien_DTO nv)
+        {
+            string query = string.Format("Update NhanVien set HoTen=N'{0}',GioiTinh='{1}',NgaySinh='{2}',DiaChi=N'{3}',SoDienThoai='{4}' where MaNV='{5}'", nv.HoTen, nv.GioiTinh, nv.NgaySinh, nv.DiaChi, nv.SoDienThoai, nv.MaNhanVien);
+            bool result = DataProvider.QueryData(query);
+            return result;
+        }
     }
 }

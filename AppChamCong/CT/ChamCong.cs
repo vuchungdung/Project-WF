@@ -19,6 +19,7 @@ namespace AppChamCong.CT
             InitializeComponent();
         }
         ChamCong_BUL chamCong = new ChamCong_BUL();
+        int dem = 0;
         private void btCapNhat_Click(object sender, EventArgs e)
         {
             int d = 0;
@@ -46,15 +47,42 @@ namespace AppChamCong.CT
             }
         }
 
-
         private void ChamCong_Load(object sender, EventArgs e)
         {
             LoadDataChamCong();
         }
         public void LoadDataChamCong()
         {
+            DateTime date = dtpNgay.Value;
+
             dataGridView2.DataSource = typeof(List<ChamCong_DTO_View>);
             dataGridView2.DataSource = chamCong.LoadChamCong();
+        }
+
+        private void cbCC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbCC.Checked == true)
+                for (int i = 0; i < dataGridView2.RowCount; i++)
+                    dataGridView2.Rows[i].Cells["TinhTrang"].Value = "Đi Làm";
+            else
+                for (int i = 0; i < dataGridView2.RowCount; i++)
+                    dataGridView2.Rows[i].Cells["TinhTrang"].Value = "";
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != 0 && dem == 1)
+            {
+                lbMa.Text = dataGridView2.CurrentRow.Cells["Ma"].Value.ToString();
+                lbTen.Text = dataGridView2.CurrentRow.Cells["Ten"].Value.ToString();
+                lbTinhTrang.Text = dataGridView2.CurrentRow.Cells["TinhTrang"].Value.ToString();
+            }
+            else if (e.ColumnIndex != 0 && dem == 0)
+            {
+                lbMa.Text = dataGridView2.CurrentRow.Cells["Ma"].Value.ToString();
+                lbTen.Text = dataGridView2.CurrentRow.Cells["Ten"].Value.ToString();
+                lbTinhTrang.Text = "Chưa có giá trị";
+            }
         }
     }
 }

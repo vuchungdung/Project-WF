@@ -98,7 +98,7 @@
             // 
             this.rdNam.AutoSize = true;
             this.rdNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdNam.Location = new System.Drawing.Point(110, 138);
+            this.rdNam.Location = new System.Drawing.Point(110, 136);
             this.rdNam.Name = "rdNam";
             this.rdNam.Size = new System.Drawing.Size(52, 19);
             this.rdNam.TabIndex = 4;
@@ -230,6 +230,7 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // DoiThongTin
             // 
@@ -239,6 +240,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "DoiThongTin";
             this.Size = new System.Drawing.Size(865, 467);
+            this.Load += new System.EventHandler(this.DoiThongTin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

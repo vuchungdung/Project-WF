@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUL;
+using AppChamCong.CommonService;
 
 namespace AppChamCong.CT
 {
@@ -79,5 +80,13 @@ namespace AppChamCong.CT
             }
         }
 
+        private void DoiMatKhau_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        public void LoadData()
+        {
+            lblTaiKhoan.Text = TaiKhoan.TAIKHOAN;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppChamCong.CommonService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,11 +44,6 @@ namespace AppChamCong
         }
 
         private void btnTKNhanVien_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void brnChamCong_Click(object sender, EventArgs e)
         {
 
         }
@@ -118,6 +114,54 @@ namespace AppChamCong
         {
             if (MessageBox.Show("Bạn muốn đăng xuất?", "Chu Ý", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 Application.Restart();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CT.BangLuong nv = new CT.BangLuong();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(nv);
+        }
+
+        public void LoadForm()
+        {
+            tabControl1.SelectedTab = tabPage2;
+            LoadQuyen(QuyenHan.QUYEN_HAN);
+        }
+        public void LoadQuyen(string quyen)
+        {
+            if (quyen == "member")
+            {
+                btnTaoTK.Enabled = false;
+                btnNhanVien.Enabled = false;
+                btnPhongBan.Enabled = false;
+                btnChamCong.Enabled = false;
+                btnChucVu.Enabled = false;
+                button5.Enabled = false;
+            }
+            if (quyen == "admin")
+            {
+                btnTaoTK.Enabled = true;
+                btnNhanVien.Enabled = true;
+                btnPhongBan.Enabled = true;
+                btnChamCong.Enabled = true;
+                btnChucVu.Enabled = true;
+                button5.Enabled = true;
+            }
+            if (quyen == "editor")
+            {
+                btnTaoTK.Enabled = false;
+                btnNhanVien.Enabled = true;
+                btnPhongBan.Enabled = false;
+                btnChamCong.Enabled = true;
+                btnChucVu.Enabled = false;
+                button5.Enabled = true;
+            }
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            LoadForm();
         }
     }
 }

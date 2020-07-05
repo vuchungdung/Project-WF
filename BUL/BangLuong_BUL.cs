@@ -16,5 +16,9 @@ namespace BUL
         {
             return bangLuong.XemBangLuongTheoThang(thang);
         }
+        public List<BangLuong_DTO> XemBangLuongTheoNam(int nam)
+        {
+            return bangLuong.XemBangLuongTheoNam(nam);
+        }
     }
 }

@@ -31,5 +31,17 @@ namespace BUL
         {
             return nhanVien_DAL.UpdateNhanVien(nv);
         }
+        public string LayChucVu(string manv)
+        {
+            return nhanVien_DAL.LayChucVu(manv);
+        }
+        public NhanVien_DTO GetNhanVien(string manv)
+        {
+            return nhanVien_DAL.GetNhanVien(manv);
+        }
+        public bool UpdateTTNhanVien(NhanVien_DTO nv)
+        {
+            return nhanVien_DAL.UpdateTTNhanVien(nv);
+        }
     }
 }

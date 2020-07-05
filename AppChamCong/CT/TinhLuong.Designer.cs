@@ -44,6 +44,7 @@
             this.KhongPhep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoPhep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTL)).BeginInit();
@@ -92,6 +93,7 @@
             this.btCapNhat.TabIndex = 4;
             this.btCapNhat.Text = "Cập Nhật";
             this.btCapNhat.UseVisualStyleBackColor = true;
+            this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
             // 
             // lbTen
             // 
@@ -100,9 +102,9 @@
             this.lbTen.ForeColor = System.Drawing.Color.White;
             this.lbTen.Location = new System.Drawing.Point(106, 52);
             this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(41, 13);
+            this.lbTen.Size = new System.Drawing.Size(92, 13);
             this.lbTen.TabIndex = 2;
-            this.lbTen.Text = "label2";
+            this.lbTen.Text = "Tên Nhân Viên";
             // 
             // label3
             // 
@@ -138,6 +140,7 @@
             this.KhongPhep,
             this.CoPhep,
             this.Thang,
+            this.Nam,
             this.TongLuong});
             this.dataGridViewTL.Location = new System.Drawing.Point(0, 119);
             this.dataGridViewTL.Name = "dataGridViewTL";
@@ -145,6 +148,7 @@
             this.dataGridViewTL.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewTL.Size = new System.Drawing.Size(796, 320);
             this.dataGridViewTL.TabIndex = 0;
+            this.dataGridViewTL.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTL_CellContentClick);
             // 
             // lbTB
             // 
@@ -207,6 +211,13 @@
             this.Thang.Name = "Thang";
             this.Thang.ReadOnly = true;
             // 
+            // Nam
+            // 
+            this.Nam.DataPropertyName = "Nam";
+            this.Nam.HeaderText = "Năm";
+            this.Nam.Name = "Nam";
+            this.Nam.ReadOnly = true;
+            // 
             // TongLuong
             // 
             this.TongLuong.DataPropertyName = "TongLuong";
@@ -249,6 +260,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn KhongPhep;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoPhep;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nam;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongLuong;
     }
 }

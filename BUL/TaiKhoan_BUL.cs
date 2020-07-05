@@ -23,5 +23,25 @@ namespace BUL
         {
             return taiKhoan_DAL.GetTaiKhoan(tk, mk);
         }
+        public bool CapNhatTaiKhoan(TaiKhoan_DTO tk)
+        {
+            return taiKhoan_DAL.UpdateTaiKhoan(tk);
+        }
+        public bool ThemTaiKhoan(TaiKhoan_DTO tk)
+        {
+            return taiKhoan_DAL.InsertTaiKhoan(tk);
+        }
+        public bool XoaTaiKhoan(string tk)
+        {
+            return taiKhoan_DAL.DeleteTaiKhoan(tk);
+        }
+        public List<TaiKhoan_DTO_NVCoTK> NhanVienCoTK()
+        {
+            return taiKhoan_DAL.NvCoTaiKhoan();
+        }
+        public List<TaiKhoan_DTO_NVCTK> NhanVienCTK()
+        {
+            return taiKhoan_DAL.NvCTaiKhoan();
+        }
     }
 }
