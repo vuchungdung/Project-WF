@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewTL = new System.Windows.Forms.DataGridView();
-            this.lbTB = new System.Windows.Forms.Label();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,12 +45,17 @@
             this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbTB = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTL)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lbChucVu);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btCapNhat);
@@ -89,7 +93,7 @@
             // 
             this.btCapNhat.Location = new System.Drawing.Point(615, 85);
             this.btCapNhat.Name = "btCapNhat";
-            this.btCapNhat.Size = new System.Drawing.Size(181, 28);
+            this.btCapNhat.Size = new System.Drawing.Size(150, 28);
             this.btCapNhat.TabIndex = 4;
             this.btCapNhat.Text = "Cập Nhật";
             this.btCapNhat.UseVisualStyleBackColor = true;
@@ -149,17 +153,6 @@
             this.dataGridViewTL.Size = new System.Drawing.Size(796, 320);
             this.dataGridViewTL.TabIndex = 0;
             this.dataGridViewTL.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTL_CellContentClick);
-            // 
-            // lbTB
-            // 
-            this.lbTB.AutoSize = true;
-            this.lbTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTB.ForeColor = System.Drawing.Color.Red;
-            this.lbTB.Location = new System.Drawing.Point(477, 454);
-            this.lbTB.Name = "lbTB";
-            this.lbTB.Size = new System.Drawing.Size(10, 13);
-            this.lbTB.TabIndex = 14;
-            this.lbTB.Text = ".";
             // 
             // MaNV
             // 
@@ -225,6 +218,38 @@
             this.TongLuong.Name = "TongLuong";
             this.TongLuong.ReadOnly = true;
             // 
+            // lbTB
+            // 
+            this.lbTB.AutoSize = true;
+            this.lbTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTB.ForeColor = System.Drawing.Color.Red;
+            this.lbTB.Location = new System.Drawing.Point(477, 454);
+            this.lbTB.Name = "lbTB";
+            this.lbTB.Size = new System.Drawing.Size(10, 13);
+            this.lbTB.TabIndex = 14;
+            this.lbTB.Text = ".";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(612, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 16);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Tháng hiện tại :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(716, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 16);
+            this.label4.TabIndex = 11;
+            // 
             // TinhLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,5 +287,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Thang;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nam;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongLuong;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }

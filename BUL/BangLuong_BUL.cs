@@ -12,9 +12,9 @@ namespace BUL
     {
         BangLuong_DAL bangLuong = new BangLuong_DAL();
 
-        public List<BangLuong_DTO> XemBangLuongTheoThang(int thang)
+        public List<BangLuong_DTO> XemBangLuongTheoThang(int thang,int nam)
         {
-            return bangLuong.XemBangLuongTheoThang(thang);
+            return bangLuong.XemBangLuongTheoThang(thang,nam);
         }
         public List<BangLuong_DTO> XemBangLuongTheoNam(int nam)
         {

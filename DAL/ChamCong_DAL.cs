@@ -35,15 +35,15 @@ namespace DAL
             bool result = DataProvider.QueryData(query);
             return result;
         }
-        public bool XoaChamCong(string ma)
+        public bool SuaChamCong(ChamCong_DTO cc)
         {
-            string query = string.Format("Delete ChamCong where MaNV='"+ma+"'");
+            string query = string.Format("Update ChamCong set TinhTrang = N'"+cc.TinhTrang+"' where MaNV='"+cc.MaNV+"' and Ngay = '"+cc.Ngay+"'");
             bool result = DataProvider.QueryData(query);
             return result;
         }
         public bool XoaChamCongTheoNgay(DateTime ngay)
         {
-            string query = string.Format("Delete ChamCong where MaNV='" + ngay + "'");
+            string query = string.Format("Delete ChamCong where Ngay='" + ngay + "'");
             bool result = DataProvider.QueryData(query);
             return result;
         }

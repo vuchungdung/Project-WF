@@ -257,7 +257,7 @@
             this.dataGridViewNV.Location = new System.Drawing.Point(102, 232);
             this.dataGridViewNV.Name = "dataGridViewNV";
             this.dataGridViewNV.ReadOnly = true;
-            this.dataGridViewNV.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridViewNV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewNV.Size = new System.Drawing.Size(712, 212);
             this.dataGridViewNV.TabIndex = 39;

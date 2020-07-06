@@ -11,9 +11,9 @@ namespace BUL
     public class TinhLuong_BUL
     {
         BangLuong_DAL bangLuong = new BangLuong_DAL();
-        public List<BangLuong_DTO> LoadTinhLuong()
+        public List<BangLuong_DTO> LoadTinhLuong(int thang)
         {
-            return bangLuong.LoadTinhLuong();
+            return bangLuong.LoadTinhLuong(thang);
         }
         public bool ThemBangLuong(BangLuong_DTO bl)
         {

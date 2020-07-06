@@ -22,7 +22,8 @@ namespace AppChamCong.CT
         }
         public void LoadTinhLuong()
         {
-            dataGridViewTL.DataSource = tinhLuong.LoadTinhLuong();
+            label4.Text = DateTime.Now.Month.ToString();
+            dataGridViewTL.DataSource = tinhLuong.LoadTinhLuong(DateTime.Now.Month);
             for (int i = 0; i < dataGridViewTL.RowCount; i++)
             {
                 string manv = dataGridViewTL.Rows[i].Cells["MaNV"].Value.ToString();
@@ -45,32 +46,36 @@ namespace AppChamCong.CT
         
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            BangLuong_DTO bangLuong = new BangLuong_DTO();
-            int count = 0;
-            for (int i = 0; i < dataGridViewTL.RowCount; i++)
+            DialogResult R = MessageBox.Show("Bạn muốn tiến hành tính lương ?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (R == DialogResult.Yes)
             {
-                bangLuong.MaNV = dataGridViewTL.Rows[i].Cells["MaNV"].Value.ToString();
-                bangLuong.TenNV = dataGridViewTL.Rows[i].Cells["TenNV"].Value.ToString();
-                bangLuong.NgayLuong = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["NgayLuong"].Value);
-                bangLuong.Thang = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["Thang"].Value);
-                bangLuong.DiLam = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["DiLam"].Value);
-                bangLuong.CoPhep = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["CoPhep"].Value);
-                bangLuong.KhongPhep = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["KhongPhep"].Value);
-                bangLuong.TongLuong = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["TongLuong"].Value);
-                bangLuong.Nam = DateTime.Now.Year;
-                if (tinhLuong.ThemBangLuong(bangLuong) == true)
+                BangLuong_DTO bangLuong = new BangLuong_DTO();
+                int count = 0;
+                for (int i = 0; i < dataGridViewTL.RowCount; i++)
                 {
-                    count++;
+                    bangLuong.MaNV = dataGridViewTL.Rows[i].Cells["MaNV"].Value.ToString();
+                    bangLuong.TenNV = dataGridViewTL.Rows[i].Cells["TenNV"].Value.ToString();
+                    bangLuong.NgayLuong = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["NgayLuong"].Value);
+                    bangLuong.Thang = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["Thang"].Value);
+                    bangLuong.DiLam = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["DiLam"].Value);
+                    bangLuong.CoPhep = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["CoPhep"].Value);
+                    bangLuong.KhongPhep = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["KhongPhep"].Value);
+                    bangLuong.TongLuong = Convert.ToInt32(dataGridViewTL.Rows[i].Cells["TongLuong"].Value);
+                    bangLuong.Nam = DateTime.Now.Year;
+                    if (tinhLuong.ThemBangLuong(bangLuong) == true)
+                    {
+                        count++;
+                    }
                 }
-            }
-            if(count == dataGridViewTL.RowCount)
-            {
-                MessageBox.Show("Thêm bảng lương thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Tháng này đã được chấm!");
-            }
+                if (count == dataGridViewTL.RowCount)
+                {
+                    MessageBox.Show("Thêm bảng lương thành công!","Thông Báo");
+                }
+                else
+                {
+                    MessageBox.Show("Tháng lương đã tồn tại!","Lỗi");
+                }
+            }           
         }
 
         private void dataGridViewTL_CellContentClick(object sender, DataGridViewCellEventArgs e)

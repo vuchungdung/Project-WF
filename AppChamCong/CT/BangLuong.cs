@@ -36,5 +36,19 @@ namespace AppChamCong.CT
             ExportExcel excel = new ExportExcel();
             excel.Export(dataGridViewBL, @"D:\", "DanhSachBangLuong");
         }
+
+        private void btXem_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtThang.Text))
+            {
+                int thang = Convert.ToInt32(txtThang.Text);
+                int nam = Convert.ToInt32(txtNam.Text);
+                dataGridViewBL.DataSource = bangLuong.XemBangLuongTheoThang(thang, nam);
+            }
+            else
+            {
+                dataGridViewBL.DataSource = bangLuong.XemBangLuongTheoNam(Convert.ToInt32(txtNam.Text));
+            }
+        }
     }
 }

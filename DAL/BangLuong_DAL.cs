@@ -10,13 +10,13 @@ namespace DAL
 {
     public class BangLuong_DAL
     {
-        public List<BangLuong_DTO> LoadTinhLuong()
+        public List<BangLuong_DTO> LoadTinhLuong(int thang)
         {
             string query = "select nv.MaNV,nv.HoTen,cv.NgayLuong,MONTH(cc.Ngay) as Thang, "+
                                 "sum((case when cc.TinhTrang = N'Đi Làm' then 1 else 0 end)) as DiLam, "+
                                 "sum((case when cc.TinhTrang = N'Nghỉ Có Phép' then 1 else 0 end)) as CoPhep, "+
                                 "sum((case when cc.TinhTrang = N'Nghỉ Không Phép' then 1 else 0 end)) as KhongPhep "+
-                            "from dbo.ChamCong cc,dbo.ChucVu cv, dbo.NhanVien nv where cc.MaNV = nv.MaNV and nv.MaChucVu = cv.MaChucVu"+
+                            "from dbo.ChamCong cc,dbo.ChucVu cv, dbo.NhanVien nv where cc.MaNV = nv.MaNV and nv.MaChucVu = cv.MaChucVu and MONTH(cc.Ngay) =" + thang+""+
                             " group by nv.MaNV,nv.HoTen,cv.NgayLuong,MONTH(cc.Ngay)";
             DataTable dataTable = new DataTable();
             dataTable = DataProvider.LoadData(query);
@@ -42,14 +42,14 @@ namespace DAL
         }
         public bool InsertBangLuong(BangLuong_DTO nv)
         {
-            string query = string.Format("Insert into BangLuongNV(MaNV,TenNV,NgayLuong,SoNgayLam,Thang,CoPhep,KhongPhep,TongLuong) values(N'{0}',N'{1}','{2}','{3}',N'{4}','{5}','{6}','{7}')"
-                , nv.MaNV, nv.TenNV, nv.NgayLuong, nv.DiLam, nv.Thang, nv.CoPhep, nv.KhongPhep,nv.TongLuong);
+            string query = string.Format("Insert into BangLuongNV(MaNV,TenNV,NgayLuong,SoNgayLam,Thang,CoPhep,KhongPhep,TongLuong,Nam) values(N'{0}',N'{1}','{2}','{3}',N'{4}','{5}','{6}','{7}','{8}')"
+                , nv.MaNV, nv.TenNV, nv.NgayLuong, nv.DiLam, nv.Thang, nv.CoPhep, nv.KhongPhep,nv.TongLuong, nv.Nam);
             bool result = DataProvider.QueryData(query);
             return result;
         }
-        public List<BangLuong_DTO> XemBangLuongTheoThang(int thang)
+        public List<BangLuong_DTO> XemBangLuongTheoThang(int thang,int nam)
         {
-            string query = "Select * from BangLuongNV nv where nv.Thang="+thang+"";
+            string query = "Select * from BangLuongNV nv where nv.Thang="+thang+" and nv.Nam = "+nam+"";
             DataTable dataTable = new DataTable();
             dataTable = DataProvider.LoadData(query);
             List<BangLuong_DTO> ListNV = new List<BangLuong_DTO>();
@@ -75,7 +75,7 @@ namespace DAL
         }
         public List<BangLuong_DTO> XemBangLuongTheoNam(int nam)
         {
-            string query = "Select * from BangLuongNV nv where nv.Nam=" + nam + "";
+            string query = "Select * from BangLuongNV nv where nv.Nam=" + nam + " order by nv.Thang desc";
             DataTable dataTable = new DataTable();
             dataTable = DataProvider.LoadData(query);
             List<BangLuong_DTO> ListNV = new List<BangLuong_DTO>();

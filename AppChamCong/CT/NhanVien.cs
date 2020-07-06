@@ -122,8 +122,15 @@ namespace AppChamCong.CT
                     if (dataGridViewNV.SelectedRows != null)
                     {
                         string manv = dataGridViewNV.SelectedRows[0].Cells[0].Value.ToString();
-                        nhanVien.DeleteNhanVien(manv);
-                        LoadDataNhanVien();
+                        if (nhanVien.DeleteNhanVien(manv) == true)
+                        {
+                            LoadDataNhanVien();
+                            MessageBox.Show("Xóa thành công!", "Thông Báo");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa thất bại!", "Thông Báo");
+                        }
                     }
                 }
             }

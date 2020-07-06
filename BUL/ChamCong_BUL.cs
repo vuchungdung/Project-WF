@@ -19,5 +19,13 @@ namespace BUL
         {
             return chamCong_DAL.ThemChamCong(cc);
         }
+        public bool SuaChamCong(ChamCong_DTO cc)
+        {
+            return chamCong_DAL.SuaChamCong(cc);
+        }
+        public bool XoaChamCong(DateTime cc)
+        {
+            return chamCong_DAL.XoaChamCongTheoNgay(cc);
+        }
     }
 }

@@ -73,6 +73,7 @@
             this.btXem.TabIndex = 16;
             this.btXem.Text = "Xem";
             this.btXem.UseVisualStyleBackColor = true;
+            this.btXem.Click += new System.EventHandler(this.btXem_Click);
             // 
             // button1
             // 
@@ -158,6 +159,7 @@
             this.MaNV.HeaderText = "Mã Nhân Viên";
             this.MaNV.Name = "MaNV";
             this.MaNV.ReadOnly = true;
+            this.MaNV.Width = 92;
             // 
             // TenNV
             // 
@@ -173,7 +175,7 @@
             this.NgayLuong.HeaderText = "Ngày Lương";
             this.NgayLuong.Name = "NgayLuong";
             this.NgayLuong.ReadOnly = true;
-            this.NgayLuong.Width = 90;
+            this.NgayLuong.Width = 83;
             // 
             // DiLam
             // 
@@ -181,7 +183,7 @@
             this.DiLam.HeaderText = "Số Ngày Làm";
             this.DiLam.Name = "DiLam";
             this.DiLam.ReadOnly = true;
-            this.DiLam.Width = 96;
+            this.DiLam.Width = 70;
             // 
             // KhongPhep
             // 

@@ -19,10 +19,10 @@ namespace AppChamCong.CT
             InitializeComponent();
         }
         ChamCong_BUL chamCong = new ChamCong_BUL();
-        int dem = 0;
         private void btCapNhat_Click(object sender, EventArgs e)
         {
             int d = 0;
+            int c = 0;
             for (int i = 0; i < dataGridView2.RowCount; i++)
             {
                 if (dataGridView2.Rows[i].Cells["TinhTrang"].Value == null)
@@ -32,8 +32,9 @@ namespace AppChamCong.CT
                 }
                 else d++;
             }
-            if (d != 0)
+            if (d == dataGridView2.RowCount)
             {
+                
                 for (int i = 0; i < dataGridView2.RowCount; i++)
                 {
                     ChamCong_DTO cc = new ChamCong_DTO();
@@ -41,9 +42,23 @@ namespace AppChamCong.CT
                     cc.MaNV = dataGridView2.Rows[i].Cells["MaNV"].Value.ToString();
                     cc.Ngay = dtpNgay.Value;
                     cc.TinhTrang = dataGridView2.Rows[i].Cells["TinhTrang"].Value.ToString();
-                    chamCong.ThemChamCong(cc);                   
+                    if (chamCong.ThemChamCong(cc) == true)
+                    {
+                        c++;
+                    }
+                    else
+                    {
+                        c = 0;
+                    }
                 }
-                MessageBox.Show("Đã chấm công", "Thông Báo");
+                if (c == 0)
+                {
+                    MessageBox.Show("Hôm nay đã chấm công!", "Lỗi");
+                }
+                else
+                {
+                    MessageBox.Show("Đã chấm công", "Thông Báo");
+                }
             }
             else
             {
@@ -58,7 +73,6 @@ namespace AppChamCong.CT
         public void LoadDataChamCong()
         {
             DateTime date = dtpNgay.Value;
-
             dataGridView2.DataSource = typeof(List<ChamCong_DTO_View>);
             dataGridView2.DataSource = chamCong.LoadChamCong();
         }
@@ -87,6 +101,46 @@ namespace AppChamCong.CT
                 {
                     lbTinhTrang.Text = dataGridView2.CurrentRow.Cells["TinhTrang"].Value.ToString();
                 }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ChamCong_DTO cc = new ChamCong_DTO();
+            cc.MaNV = lbMa.Text;
+            cc.Ngay = dtpNgay.Value;
+            cc.TinhTrang = lbTinhTrang.Text;
+            if(chamCong.SuaChamCong(cc) == true)
+            {
+                MessageBox.Show("Sửa thành công!", "Thông Báo");
+            }
+            else
+            {
+                MessageBox.Show("Sửa thất bại!", "Thông Báo");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult R = MessageBox.Show("BẠN CÓ THỰC SỰ MUỐN XÓA", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1);
+                if (R == DialogResult.Yes)
+                {
+                    DateTime ngay = dtpNgay.Value;
+                    if (chamCong.XoaChamCong(ngay) == true)
+                    {
+                        MessageBox.Show("Xóa thành công!", "Thông Báo");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại!", "Thông Báo");
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
             }
         }
     }
