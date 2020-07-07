@@ -35,6 +35,7 @@ namespace AppChamCong.CT
         {
             ExportExcel excel = new ExportExcel();
             excel.Export(dataGridViewBL, @"D:\", "DanhSachBangLuong");
+            MessageBox.Show("Xuất thành công!", "Thông báo");
         }
 
         private void btXem_Click(object sender, EventArgs e)

@@ -39,6 +39,7 @@ namespace AppChamCong.CT
         {
             ExportExcel excel = new ExportExcel();
             excel.Export(dataGridView1, @"D:\", "DanhSachBangLuongCongTy");
+            MessageBox.Show("Xuất thành công!", "Thông báo");
         }
     }
 }

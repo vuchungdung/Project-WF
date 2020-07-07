@@ -51,6 +51,7 @@ namespace AppChamCong.CT
         {
             ExportExcel excel = new ExportExcel();
             excel.Export(dataGridView1, @"D:\", "DanhSachChamCong");
+            MessageBox.Show("Xuất thành công!", "Thông báo");
         }
 
         private void label2_Click(object sender, EventArgs e)
