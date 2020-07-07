@@ -99,5 +99,70 @@ namespace DAL
             }
             return ListNV;
         }
+        public List<BangLuong_DTO_View> ThongKeLuongToanCongTy(int nam)
+        {
+            string query = "select bl.MaNV,"+
+                "sum(case when bl.Thang = 1 then bl.TongLuong else 0 end) as Thang1,"+
+	            "sum(case when bl.Thang = 2 then bl.TongLuong else 0 end) as Thang2,"+
+	            "sum(case when bl.Thang = 3 then bl.TongLuong else 0 end) as Thang3,"+
+	            "sum(case when bl.Thang = 4 then bl.TongLuong else 0 end) as Thang4,"+
+	            "sum(case when bl.Thang = 5 then bl.TongLuong else 0 end) as Thang5,"+
+	            "sum(case when bl.Thang = 6 then bl.TongLuong else 0 end) as Thang6,"+
+	            "sum(case when bl.Thang = 7 then bl.TongLuong else 0 end) as Thang7,"+
+	            "sum(case when bl.Thang = 8 then bl.TongLuong else 0 end) as Thang8,"+
+	            "sum(case when bl.Thang = 9 then bl.TongLuong else 0 end) as Thang9,"+
+	            "sum(case when bl.Thang = 10 then bl.TongLuong else 0 end) as Thang10,"+
+	            "sum(case when bl.Thang = 11 then bl.TongLuong else 0 end) as Thang11,"+
+	            "sum(case when bl.Thang = 12 then bl.TongLuong else 0 end) as Thang12 "+
+                "from BangLuongNV bl where bl.Nam = "+nam+" group by bl.MaNV";
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.LoadData(query);
+            List<BangLuong_DTO_View> ListNV = new List<BangLuong_DTO_View>();
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                BangLuong_DTO_View cc;
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    cc = new BangLuong_DTO_View();
+                    cc.MaNV = dataTable.Rows[i]["MaNV"].ToString();
+                    cc.Thang1 = Convert.ToInt32(dataTable.Rows[i]["Thang1"]);
+                    cc.Thang2 = Convert.ToInt32(dataTable.Rows[i]["Thang2"]);
+                    cc.Thang3 = Convert.ToInt32(dataTable.Rows[i]["Thang3"]);
+                    cc.Thang4 = Convert.ToInt32(dataTable.Rows[i]["Thang4"]);
+                    cc.Thang5 = Convert.ToInt32(dataTable.Rows[i]["Thang5"]);
+                    cc.Thang6 = Convert.ToInt32(dataTable.Rows[i]["Thang6"]);
+                    cc.Thang7 = Convert.ToInt32(dataTable.Rows[i]["Thang7"]);
+                    cc.Thang8 = Convert.ToInt32(dataTable.Rows[i]["Thang8"]);
+                    cc.Thang9 = Convert.ToInt32(dataTable.Rows[i]["Thang9"]);
+                    cc.Thang10 = Convert.ToInt32(dataTable.Rows[i]["Thang10"]);
+                    cc.Thang11 = Convert.ToInt32(dataTable.Rows[i]["Thang11"]);
+                    cc.Thang12 = Convert.ToInt32(dataTable.Rows[i]["Thang12"]);
+                    ListNV.Add(cc);
+                }
+            }
+            return ListNV;
+        }
+        public List<BangLuong_DTO_View2> ThongKeLuongCaNhan(string manv,int nam)
+        {
+            string query = "select bl.Thang,bl.SoNgayLam,bl.CoPhep,bl.KhongPhep,bl.TongLuong from BangLuongNV bl where bl.MaNV = '"+manv+"'and bl.Nam = "+nam+" order by bl.Thang desc";
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.LoadData(query);
+            List<BangLuong_DTO_View2> ListNV = new List<BangLuong_DTO_View2>();
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                BangLuong_DTO_View2 cc;
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    cc = new BangLuong_DTO_View2();
+                    cc.DiLam = Convert.ToInt32(dataTable.Rows[i]["SoNgayLam"]);
+                    cc.CoPhep = Convert.ToInt32(dataTable.Rows[i]["CoPhep"]);
+                    cc.KhongPhep = Convert.ToInt32(dataTable.Rows[i]["KhongPhep"]);
+                    cc.Thang = Convert.ToInt32(dataTable.Rows[i]["Thang"]);
+                    cc.TongLuong = Convert.ToInt32(dataTable.Rows[i]["TongLuong"]);
+                    ListNV.Add(cc);
+                }
+            }
+            return ListNV;
+        }
     }
 }

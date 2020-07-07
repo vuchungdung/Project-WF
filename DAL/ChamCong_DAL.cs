@@ -47,5 +47,55 @@ namespace DAL
             bool result = DataProvider.QueryData(query);
             return result;
         }
+        public List<ChamCong_DTO_View2> TheoDoiNgayCong(string manv,int nam)
+        {
+            string query = string.Format("select cc.Ngay as N'Ngay',"+
+                "sum(case when cc.TinhTrang = N'Đi Làm' then 1 else 0 end) as DiLam,"+
+	            "sum(case when cc.TinhTrang = N'Nghỉ Có Phép' then 1 else 0 end) as NghiCoPhep,"+
+	            "sum(case when cc.TinhTrang = N'Nghỉ Không Phép' then 1 else 0 end) as NghiKhongPhep "+
+                "from ChamCong cc where cc.MaNV = '"+manv+"' and YEAR(cc.Ngay) = "+nam+" group by cc.Ngay");
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.LoadData(query);
+            List<ChamCong_DTO_View2> ListNV = new List<ChamCong_DTO_View2>();
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                ChamCong_DTO_View2 cc;
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    cc = new ChamCong_DTO_View2();
+                    cc.Ngay = Convert.ToDateTime(dataTable.Rows[i]["Ngay"]);
+                    cc.DiLam = Convert.ToInt32(dataTable.Rows[i]["DiLam"]);
+                    cc.NghiCoPhep = Convert.ToInt32(dataTable.Rows[i]["NghiCoPhep"]);
+                    cc.NghiKhongPhep = Convert.ToInt32(dataTable.Rows[i]["NghiKhongPhep"]);
+                    ListNV.Add(cc);
+                }
+            }
+            return ListNV;
+        }
+        public List<ChamCong_DTO_View2> TheoDoiNgayCong2(string manv, int thang,int nam)
+        {
+            string query = string.Format("select cc.Ngay as N'Ngay'," +
+                "sum(case when cc.TinhTrang = N'Đi Làm' then 1 else 0 end) as DiLam," +
+                "sum(case when cc.TinhTrang = N'Nghỉ Có Phép' then 1 else 0 end) as NghiCoPhep," +
+                "sum(case when cc.TinhTrang = N'Nghỉ Không Phép' then 1 else 0 end) as NghiKhongPhep " +
+                "from ChamCong cc where cc.MaNV = '" + manv + "' and MONTH(cc.Ngay) = " + thang + " and YEAR(cc.Ngay) = "+nam+" group by cc.Ngay");
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.LoadData(query);
+            List<ChamCong_DTO_View2> ListNV = new List<ChamCong_DTO_View2>();
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                ChamCong_DTO_View2 cc;
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    cc = new ChamCong_DTO_View2();
+                    cc.Ngay = Convert.ToDateTime(dataTable.Rows[i]["Ngay"]);
+                    cc.DiLam = Convert.ToInt32(dataTable.Rows[i]["DiLam"]);
+                    cc.NghiCoPhep = Convert.ToInt32(dataTable.Rows[i]["NghiCoPhep"]);
+                    cc.NghiKhongPhep = Convert.ToInt32(dataTable.Rows[i]["NghiKhongPhep"]);
+                    ListNV.Add(cc);
+                }
+            }
+            return ListNV;
+        }
     }
 }

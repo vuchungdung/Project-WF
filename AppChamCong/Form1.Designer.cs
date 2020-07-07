@@ -58,6 +58,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -309,6 +313,10 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.button4);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.label1);
@@ -338,6 +346,7 @@
             this.button2.Size = new System.Drawing.Size(70, 70);
             this.button2.TabIndex = 20;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -346,7 +355,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 16);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Xem bảng luong";
+            this.label1.Text = "Xem bảng lương";
             // 
             // button1
             // 
@@ -362,8 +371,46 @@
             // 
             this.panel1.Location = new System.Drawing.Point(0, 123);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(862, 472);
+            this.panel1.Size = new System.Drawing.Size(832, 472);
             this.panel1.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(307, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(191, 16);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Xem bảng lương(Toàn công ty)";
+            // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(361, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 70);
+            this.button3.TabIndex = 22;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(504, 78);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(162, 16);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Xem bảng lương(Cá nhân)";
+            // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(544, 6);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(70, 70);
+            this.button4.TabIndex = 24;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
@@ -418,5 +465,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button3;
     }
 }

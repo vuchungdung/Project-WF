@@ -19,4 +19,11 @@ namespace DTO
         public string MaNV { set; get; }
 
     }
+    public class ChamCong_DTO_View2
+    {
+        public DateTime Ngay { set; get; }
+        public int DiLam { set; get; }
+        public int NghiCoPhep { set; get; }
+        public int NghiKhongPhep { set; get; }
+    }
 }

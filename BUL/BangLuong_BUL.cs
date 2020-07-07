@@ -20,5 +20,13 @@ namespace BUL
         {
             return bangLuong.XemBangLuongTheoNam(nam);
         }
+        public List<BangLuong_DTO_View> ThongKeLuongToanCongTy(int nam)
+        {
+            return bangLuong.ThongKeLuongToanCongTy(nam);
+        }
+        public List<BangLuong_DTO_View2> ThongKeLuongCaNhan(string manv,int nam)
+        {
+            return bangLuong.ThongKeLuongCaNhan(manv,nam);
+        }
     }
 }

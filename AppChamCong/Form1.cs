@@ -138,6 +138,7 @@ namespace AppChamCong
                 btnChamCong.Enabled = false;
                 btnChucVu.Enabled = false;
                 button5.Enabled = false;
+                button3.Enabled = false;
             }
             if (quyen == "admin")
             {
@@ -162,6 +163,27 @@ namespace AppChamCong
         private void Form1_Load_1(object sender, EventArgs e)
         {
             LoadForm();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CT.TheoDoiChamCong nv = new CT.TheoDoiChamCong();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(nv);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CT.ThongKeLuongToanCongTy nv = new CT.ThongKeLuongToanCongTy();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(nv);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CT.ThongKeLuongCaNhan nv = new CT.ThongKeLuongCaNhan();
+            panel1.Controls.Clear();
+            panel1.Controls.Add(nv);
         }
     }
 }
