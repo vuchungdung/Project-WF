@@ -15,6 +15,14 @@ namespace BUL
         {
             return nhanVien_DAL.LoadNhanVien();
         }
+        public List<NhanVien_DTO> TimNhanVien(string ma)
+        {
+            return nhanVien_DAL.TimNhanVien(ma);
+        }
+        public List<NhanVien_DTO> TimNhanVienTheoten(string ten)
+        {
+            return nhanVien_DAL.TimNhanVienTheoTen(ten);
+        }
         public List<NhanVien_DTO> LoadNhanVienTheoPB(string keyword)
         {
             return nhanVien_DAL.LoadNhanVienTheoPB(keyword);

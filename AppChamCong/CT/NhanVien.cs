@@ -185,7 +185,28 @@ namespace AppChamCong.CT
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            string manv = txtTimKiem.Text;
+            if (!String.IsNullOrEmpty(manv))
+            {
+                dataGridViewNV.DataSource = nhanVien.TimNhanVien(manv);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập mã nhân viên!", "Thông Báo");
+            }
+        }
 
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string tennv = txtTimKiem.Text;
+            if (!String.IsNullOrEmpty(tennv))
+            {
+                dataGridViewNV.DataSource = nhanVien.TimNhanVienTheoten(tennv);
+            }
+            else
+            {
+                LoadDataNhanVien();
+            }
         }
     }
 }

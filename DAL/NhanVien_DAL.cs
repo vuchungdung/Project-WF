@@ -113,5 +113,55 @@ namespace DAL
             bool result = DataProvider.QueryData(query);
             return result;
         }
+        public List<NhanVien_DTO> TimNhanVien(string manv)
+        {
+            string query = "Select * from NhanVien where MaNV='" + manv + "'";
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.LoadData(query);
+            List<NhanVien_DTO> ListNV = new List<NhanVien_DTO>();
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                NhanVien_DTO nv;
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    nv = new NhanVien_DTO();
+                    nv.MaNhanVien = dataTable.Rows[i]["MaNV"].ToString();
+                    nv.HoTen = dataTable.Rows[i]["HoTen"].ToString();
+                    nv.GioiTinh = Convert.ToBoolean(dataTable.Rows[i]["GioiTinh"]);
+                    nv.NgaySinh = Convert.ToDateTime(dataTable.Rows[i]["NgaySinh"]);
+                    nv.DiaChi = dataTable.Rows[i]["DiaChi"].ToString();
+                    nv.SoDienThoai = dataTable.Rows[i]["SoDienThoai"].ToString();
+                    nv.ChucVu = dataTable.Rows[i]["MaChucVu"].ToString();
+                    nv.PhongBan = dataTable.Rows[i]["MaPB"].ToString();
+                    ListNV.Add(nv);
+                }
+            }
+            return ListNV;
+        }
+        public List<NhanVien_DTO> TimNhanVienTheoTen(string tennv)
+        {
+            string query = "Select * from NhanVien where HoTen like'% " + tennv + "'";
+            DataTable dataTable = new DataTable();
+            dataTable = DataProvider.LoadData(query);
+            List<NhanVien_DTO> ListNV = new List<NhanVien_DTO>();
+            if (dataTable != null && dataTable.Rows.Count > 0)
+            {
+                NhanVien_DTO nv;
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    nv = new NhanVien_DTO();
+                    nv.MaNhanVien = dataTable.Rows[i]["MaNV"].ToString();
+                    nv.HoTen = dataTable.Rows[i]["HoTen"].ToString();
+                    nv.GioiTinh = Convert.ToBoolean(dataTable.Rows[i]["GioiTinh"]);
+                    nv.NgaySinh = Convert.ToDateTime(dataTable.Rows[i]["NgaySinh"]);
+                    nv.DiaChi = dataTable.Rows[i]["DiaChi"].ToString();
+                    nv.SoDienThoai = dataTable.Rows[i]["SoDienThoai"].ToString();
+                    nv.ChucVu = dataTable.Rows[i]["MaChucVu"].ToString();
+                    nv.PhongBan = dataTable.Rows[i]["MaPB"].ToString();
+                    ListNV.Add(nv);
+                }
+            }
+            return ListNV;
+        }
     }
 }
